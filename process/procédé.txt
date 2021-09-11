@@ -1,0 +1,43 @@
+pages
+accueil 			- evenement d'aujourd'hui, les nouveaux produits
+planning des evenements		- tout les evenements, pouvoir s'enregistrer sur un evenement, voir qui est inscrit
+inscription à un evenement 	- je m'inscrit, à combien
+page de recherche de musique 	- type de produit, mot clé
+page du produit 		- reserver le produit en magasin, voir ses infos
+ajouter un produit		- pour les admin
+ajouter un evenement		- pour les admin
+creer un compte			- pseudo, mail, mdp, tu veux devenir admin ou pas ?
+page contact 			- juste le contact
+page de l'histoire du magasin 	- juste l'histoire
+mon compte 			- les produits reservés, mes evenements enregistré
+
+
+BDD
+produits
+	id
+	nom
+	origine
+	photos - array
+	mot clés - array
+	type de produit
+
+type produit
+	id
+	nom
+
+utilisateurs
+	id
+	pseudo
+	mail
+	admin
+	produit reservé
+	evenement enregistré
+
+evenements
+	id
+	nom
+	jour
+	heure
+	durée
+	places libre
+	organisateur
