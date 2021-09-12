@@ -1,1 +1,2 @@
-    contact et histoire du magasin
+histoire du magasin 
+<br>contact

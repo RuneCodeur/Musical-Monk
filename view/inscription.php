@@ -1,1 +1,0 @@
-    pour s'inscrire à un evenement

@@ -1,0 +1,18 @@
+$colorPrimary: rgb(132, 203, 104);
+$colorSecondary: rgb( 186, 234, 211);
+$colorTertiary: rgb(33, 117, 151);
+$colorQuatuary: rgb( 246, 195, 86);
+
+@font-face {
+	font-family: 'bakersignet';
+	src : url('./ressource/typo/BakerSignetBT.ttf') format('ttf');
+	src : url('./ressource/typo/BakerSignetBT.eot') format('eot');
+	src : url('./ressource/typo/BakerSignetBT.svg') format('svf');
+	src : url('./ressource/typo/BakerSignetBT.woff') format('woff');
+		
+}
+*{
+    font-family: 'bakersignet';
+	color: black;
+    font-size: 20px;
+}

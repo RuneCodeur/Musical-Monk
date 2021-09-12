@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'bakersignet';
+  src: url("./ressource/typo/BakerSignetBT.ttf") format("ttf");
+  src: url("./ressource/typo/BakerSignetBT.eot") format("eot");
+  src: url("./ressource/typo/BakerSignetBT.svg") format("svf");
+  src: url("./ressource/typo/BakerSignetBT.woff") format("woff");
+}
+
+* {
+  font-family: 'bakersignet';
+  color: black;
+  font-size: 20px;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.page {
+  border: 3px solid #f6c356;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.warning {
+  font-weight: bolder;
+}
+
+header {
+  width: 90%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("./ressource/BG-header.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+header #account {
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #baead3;
+}
+
+header #account a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+header #title {
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+header #title img {
+  max-height: 250px;
+}
+
+header nav {
+  width: 90%;
+  height: 70px;
+  align-items: center;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+header nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  background-color: #84cb68;
+  border-radius: 20px 20px 0 0;
+  margin: 0 5px;
+  padding: 0 5px;
+  width: 20%;
+  font-weight: bolder;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #84cb68;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .footer-block {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer .footer-block p {
+  margin: 25px 0 0 0;
+  padding: 0;
+}
+
+footer .footer-block ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
