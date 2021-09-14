@@ -35,6 +35,11 @@ html, body {
   font-weight: bolder;
 }
 
+h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
 header {
   width: 90%;
   margin: 20px 0;
@@ -131,4 +136,40 @@ footer .footer-block ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.contact h2 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.contact p {
+  margin: 20px;
+}
+
+.contact .info {
+  display: flex;
+}
+
+.contact .info ul {
+  margin: 0 60px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.contact .info ul li {
+  display: flex;
+  margin: 15px 0;
+}
+
+.contact .info ul li a {
+  display: flex;
+}
+
+.contact .info ul li i {
+  margin: 5px 10px;
+}
+
+.contact .info ul li p {
+  margin: 0;
 }

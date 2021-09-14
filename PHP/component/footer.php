@@ -5,7 +5,10 @@
     </div>
     <div class="footer-block">
         <p>inscrivez-vous à notre newsletter pour être au courant des nouveaux produits et evenements</p>
-        <strong>INSCRIPTION A LA NEWSLETTER</strong>
+        <form method="post" action="">
+            <input type="email" name="mail" required>
+            <input type="submit" value="m'inscrire à la newsletter">
+        </form>
     </div>
 
     <div class="footer-block"> 

@@ -35,5 +35,4 @@
         <a href="index.php?page=contact">contact et infos</a>
         <a href="index.php?page=addproduct">ajouter un produit</a>
     </nav>
-
 </header>
