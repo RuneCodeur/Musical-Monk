@@ -1,3 +1,9 @@
+<?php $title = 'Musical-Monk';
+
+ob_start();
+
+?>
+
 <div class="page">
     ajout d'un produit RESERVE AUX ADMINS <br>
 
@@ -9,3 +15,8 @@
     quantité <br>
     prix
 </div>
+
+<?php
+$content = ob_get_clean();
+
+require('view/template.php');

@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'bakersignet';
-  src: url("./ressource/typo/BakerSignetBT.ttf") format("ttf");
-  src: url("./ressource/typo/BakerSignetBT.eot") format("eot");
-  src: url("./ressource/typo/BakerSignetBT.svg") format("svf");
-  src: url("./ressource/typo/BakerSignetBT.woff") format("woff");
+  src: url("./public/typo/BakerSignetBT.ttf") format("ttf");
+  src: url("./public/typo/BakerSignetBT.eot") format("eot");
+  src: url("./public/typo/BakerSignetBT.svg") format("svf");
+  src: url("./public/typo/BakerSignetBT.woff") format("woff");
 }
 
 * {
@@ -24,20 +24,34 @@ html, body {
 
 .page {
   border: 3px solid #f6c356;
-  width: 90%;
+  max-width: 90%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.warning {
+h1 {
+  margin: 10px;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.win {
+  background-color: #baead3;
+  padding: 20px;
   font-weight: bolder;
 }
 
-h1 {
-  margin: 0;
-  font-size: 30px;
+.err {
+  background-color: #f55656;
+  padding: 20px;
+  font-weight: bolder;
+}
+
+fieldset {
+  border: none;
 }
 
 header {
@@ -47,7 +61,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url("./ressource/BG-header.jpg");
+  background-image: url("./public/images/BG-header.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -172,4 +186,47 @@ footer .footer-block ul {
 
 .contact .info ul li p {
   margin: 0;
+}
+
+.addevent form {
+  margin: 20px;
+}
+
+.addevent form fieldset {
+  background-color: #f6c356;
+  margin: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addevent form fieldset .thinInput {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+  align-items: center;
+}
+
+.addevent form fieldset .thinInput input {
+  height: 25px;
+}
+
+.addevent form fieldset .largeInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.addevent form fieldset .largeInput textarea {
+  margin-left: 10px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.addevent form fieldset .submit {
+  margin-top: 30px;
+  padding: 5px;
 }

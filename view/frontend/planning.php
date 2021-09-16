@@ -1,3 +1,9 @@
+<?php $title = 'Musical-Monk';
+
+ob_start();
+
+?>
+
 <div class="page">
     pour voir le planning des evenements, créer / s'inscrire à un evenements <br>
 
@@ -11,3 +17,8 @@
     <a href="index.php?page=addevent">creer un evenement</a>
     <a href="index.php?page=registration">inscription</a>
 </div>
+
+<?php
+$content = ob_get_clean();
+
+require('view/template.php');

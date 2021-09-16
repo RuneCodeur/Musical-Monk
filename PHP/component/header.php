@@ -27,7 +27,7 @@
 
     </div>
     <div id='title'>
-        <img src="./ressource/MM.png" alt="logo de Musical Monk">
+        <img src="public/images/MM.png" alt="logo de Musical Monk">
     </div>
     <nav>
         <a href="index.php">Accueil</a>

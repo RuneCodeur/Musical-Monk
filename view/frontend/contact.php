@@ -1,3 +1,9 @@
+<?php $title = 'Musical-Monk';
+
+ob_start();
+
+?>
+
 <div class="page contact">
     <h1>contact et infos</h1>
 
@@ -35,3 +41,8 @@
     </div>
 
 </div>
+
+<?php
+$content = ob_get_clean();
+
+require('view/template.php');

@@ -10,16 +10,30 @@ html, body{
 }
 .page{
     border: 3px solid $colorQuatuary;
-    width: 90%;
+    max-width: 90%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.warning{
+h1{
+    margin: 10px;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.win{
+    background-color: $colorSecondary;
+    padding: 20px;
     font-weight: bolder;
 }
-h1{
-    margin: 0;
-    font-size: 30px;
+
+.err{
+    background-color: rgb(245, 86, 86);
+    padding: 20px;
+    font-weight: bolder;
+}
+
+fieldset{
+    border: none;
 }

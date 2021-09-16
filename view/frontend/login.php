@@ -1,3 +1,9 @@
+<?php $title = 'Musical-Monk';
+
+ob_start();
+
+?>
+
 <div class="page">
     pour se log ou creer un compte sur le site <br>
     pseudo <br>
@@ -8,3 +14,8 @@
         //setcookie ('pseudo', 'tralala', time() + 30*24*3600, null, null, false, true); //token dure 30 jours
     ?>
 </div>
+
+<?php
+$content = ob_get_clean();
+
+require('view/template.php');

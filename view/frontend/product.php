@@ -1,3 +1,9 @@
+<?php $title = 'Musical-Monk';
+
+ob_start();
+
+?>
+
 <div class="page">
     pour voir un produit en particulier <br>
     photo du produit <br>
@@ -8,3 +14,8 @@
     prix <br>
     bouton reserver <br>
 </div>
+
+<?php
+$content = ob_get_clean();
+
+require('view/template.php');

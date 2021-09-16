@@ -4,10 +4,12 @@
         Musical Monk est un site Vitrine, et n'est pas prévu pour la vente ou le commerce</p>
     </div>
     <div class="footer-block">
-        <p>inscrivez-vous à notre newsletter pour être au courant des nouveaux produits et evenements</p>
         <form method="post" action="">
-            <input type="email" name="mail" required>
-            <input type="submit" value="m'inscrire à la newsletter">
+            <fieldset>
+                <legend>inscrivez-vous à notre newsletter pour être au courant des nouveaux produits et evenements</legend>
+                <input type="email" name="mail" placeholder="monmail@gmail.com" required>
+                <input type="submit" value="m'inscrire à la newsletter">
+            </fieldset>
         </form>
     </div>
 
@@ -20,5 +22,5 @@
             <li>mail : rackhamledev@gmail.com</li>
         </ul>
     </div>
-    
+        
 </footer>
