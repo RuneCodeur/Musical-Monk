@@ -1,15 +1,91 @@
 <?php $title = 'Musical-Monk';
 
 ob_start();
+if(!empty($_POST)){
+
+    if (isset($_POST['create-pseudo']) || isset($_POST['create-mail']) || isset($_POST['create-mdp']) || isset($_POST['confirm-mdp'])){
+    include('view/backend/createAccount.php');
+    };
+}
 
 ?>
 
-<div class="page">
-    pour se log ou creer un compte sur le site <br>
-    pseudo <br>
-    mot de passe <br>
-    mail (pour creer un compte)<br>
-    tu veux être admin ? <br>
+<div class="page login">
+    <h1>connexion</h1>
+
+    <?php if (!empty($errorsCreate))
+    {?>
+        <div class="err">
+            <p>vous n'avez pas rempli le formulaire correctement :</p>
+            <ul>
+
+            <?php 
+            foreach($errorsCreate as $error){
+                echo '<li>'. $error . '</li>';
+            }?>
+
+            </ul>
+        </div>
+
+    <?php
+    }
+    ?>
+
+
+    <?php if (!empty($errorsConnect))
+        echo '<div class="err">' . $error . '</div>';
+    ?>
+
+    <div class="ensemble-connection">
+        <div class="connection-account">
+            <h2>j'ai déja un compte</h2>
+            <form method="post" action="">
+                <fieldset>
+                    <div>
+                        <label for="pseudo">pseudo :</label>
+                        <input type="text" name="connect-pseudo" required>
+                    </div>
+
+                    <div>
+                        <label for="mdp">mot de passe :</label>
+                        <input type="password" name="connect-mdp" required>
+                    </div>
+
+                    <input class="submit" type="submit" value="connexion" >
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="create-account">
+            <h2> je crée un compte</h2>
+            <form method="post" action="index.php?page=login">
+                <fieldset>
+                    <div>
+                        <label for="pseudo">pseudo :</label>
+                        <input type="text" id="pseudo" name="create-pseudo" >
+                    </div>
+                    
+                    <div>
+                        <label for="mail">mail :</label>
+                        <input type="email" id="mail" name="create-mail" >
+                    </div>
+                    
+                    <div>
+                        <label for="mdp"> mot de passe :</label>
+                        <input type="password" id="mdp" name="create-mdp" onkeyup="check()">
+                    </div>
+
+                    <div>
+                        <label for="confirm-mdp"> confirmation du mot de passe :</label>
+                        <input type="password" id="confirm-mdp" name="confirm-mdp" onkeyup="check()" >
+                    </div>
+                    
+                    <input id="input-create-account" class="submit" type="submit" value=" je crée mon compte">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
     <?php
         //setcookie ('pseudo', 'tralala', time() + 30*24*3600, null, null, false, true); //token dure 30 jours
     ?>
@@ -18,4 +94,4 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-require('view/template.php');
+include('view/template.php');

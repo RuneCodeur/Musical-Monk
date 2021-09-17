@@ -11,7 +11,7 @@ ob_start();
         <fieldset>
             <div class="thinInput">
                 <label for="name"> nom  :</label>
-                <input type="text" id="name" name="name" placeholder="mon évènement" >
+                <input type="text" id="name" name="name" placeholder="mon évènement" required>
             </div>
 
             <div class="thinInput">

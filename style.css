@@ -46,7 +46,7 @@ h1 {
 
 .err {
   background-color: #f55656;
-  padding: 20px;
+  padding: 0 20px;
   font-weight: bolder;
 }
 
@@ -229,4 +229,50 @@ footer .footer-block ul {
 .addevent form fieldset .submit {
   margin-top: 30px;
   padding: 5px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.login .ensemble-connection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.login .ensemble-connection .connection-account, .login .ensemble-connection .create-account {
+  background-color: #baead3;
+  max-width: 45%;
+  margin: 10px;
+  min-width: 350px;
+}
+
+.login .ensemble-connection .connection-account h2, .login .ensemble-connection .create-account h2 {
+  text-align: center;
+}
+
+.login .ensemble-connection .connection-account form fieldset, .login .ensemble-connection .create-account form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login .ensemble-connection .connection-account form fieldset div, .login .ensemble-connection .create-account form fieldset div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.login .ensemble-connection .connection-account form fieldset .submit, .login .ensemble-connection .create-account form fieldset .submit {
+  margin-top: 10px;
 }
