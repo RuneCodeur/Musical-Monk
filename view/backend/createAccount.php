@@ -1,7 +1,8 @@
 <?php
 
-$errorsCreate = array();
+require_once ('PHP/function.php');
 require_once ('view/backend/connectDB.php');
+$errorsCreate = array();
 
 if(empty($_POST['create-pseudo']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['create-pseudo'])){
     $errorsCreate['pseudo'] = 'votre pseudo est invalide.';
@@ -34,12 +35,22 @@ if(empty($_POST['create-mdp']) || $_POST['create-mdp'] != $_POST['confirm-mdp'])
 }
 
 if(empty($errorsCreate)){
-    $req = $bdd->prepare('INSERT INTO users(pseudo, mail, mdp) VALUES(:pseudo, :mail, :mdp)');
+
+    $token = str_random(60);
+
+    $req = $bdd->prepare('INSERT INTO users(pseudo, mail, mdp, token_validation) VALUES(:pseudo, :mail, :mdp, :token)');
 
     $req->execute(array(
         'pseudo' => $_POST['create-pseudo'],
         'mail' => $_POST['create-mail'],
-        'mdp' => password_hash($_POST['create-mdp'], PASSWORD_BCRYPT) 
+        'mdp' => password_hash($_POST['create-mdp'], PASSWORD_BCRYPT),
+        'token' => $token
     ));
-    echo 'c\'est bon sa marche';
+    $userID= $bdd->lastInsertId();
+
+    require_once ('view/backend/sendMail.php');
+    mailAccount($_POST['create-mail'], $token, $userID);
+    
+    echo '<a href="http://localhost:81/Musical-Monk/index.php?page=mailconfirm&id='. $userID . '&token='. $token . '"> lien de validation </a>';
+    //header('location: index.php?page=confirmcreateaccount');
 }

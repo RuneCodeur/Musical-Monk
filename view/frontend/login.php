@@ -1,20 +1,22 @@
 <?php $title = 'Musical-Monk';
-
 ob_start();
+
 if(!empty($_POST)){
-
     if (isset($_POST['create-pseudo']) || isset($_POST['create-mail']) || isset($_POST['create-mdp']) || isset($_POST['confirm-mdp'])){
-    include('view/backend/createAccount.php');
-    };
-}
-
+        include('view/backend/createAccount.php');
+    }
+    if (isset($_POST['connect-pseudo']) || isset($_POST['connect-mdp'])){
+        include('view/backend/connectAccount.php');
+    }
+} 
 ?>
 
 <div class="page login">
     <h1>connexion</h1>
 
-    <?php if (!empty($errorsCreate))
-    {?>
+    <?php if (!empty($errorsCreate)){
+        ?>
+
         <div class="err">
             <p>vous n'avez pas rempli le formulaire correctement :</p>
             <ul>
@@ -29,10 +31,12 @@ if(!empty($_POST)){
 
     <?php
     }
-    ?>
+    
+    if(!empty($_GET['error'])){
+        echo '<div class="err"> ce lien n\'est pas valide. </div>';
+    }
 
-
-    <?php if (!empty($errorsConnect))
+    if (!empty($errorsConnect))
         echo '<div class="err">' . $error . '</div>';
     ?>
 
@@ -86,12 +90,8 @@ if(!empty($_POST)){
         </div>
     </div>
 
-    <?php
-        //setcookie ('pseudo', 'tralala', time() + 30*24*3600, null, null, false, true); //token dure 30 jours
-    ?>
 </div>
 
 <?php
 $content = ob_get_clean();
-
 include('view/template.php');

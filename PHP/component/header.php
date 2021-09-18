@@ -1,25 +1,18 @@
 <header>
     <div id='account'>
         <?php
-        if(isset($_COOKIE['pseudo']))
-        {
-            $connection = $_COOKIE['pseudo'];
+        if(isset($_SESSION['auth'])){
+            $connection = $_SESSION['auth']['pseudo'];
             {
-        ?>
-
+            ?>
             <a href="index.php?page=account">mon compte</a>
-
-        <?php
+            <?php
             }
-        }
-        else
-        {
+        }else{
             {
-        ?>
-
+            ?>
             <a href="index.php?page=login">creer un compte / connexion</a>
-
-        <?php
+            <?php
 
             }
         }
