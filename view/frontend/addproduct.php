@@ -1,7 +1,5 @@
 <?php $title = 'Musical-Monk';
-
 ob_start();
-
 ?>
 
 <div class="page">
@@ -18,5 +16,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-
 require('view/template.php');

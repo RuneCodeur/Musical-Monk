@@ -1,9 +1,8 @@
 <?php $title = 'Musical-Monk';
-
 ob_start();
-
 ?>
 
+<a href="view/backend/sessionDestroy.php">deconexion</a>
 <div class="page">
     mon compte
     nom du compte <br>
@@ -13,5 +12,4 @@ ob_start();
     
 <?php
 $content = ob_get_clean();
-
 require('view/template.php');

@@ -1,13 +1,36 @@
 <?php $title = 'Musical-Monk';
-
 ob_start();
 
+if(!empty($_POST)){
+    include('view/backend/addevent.php');
+} 
+
+?>
 ?>
 
 <div class="page addevent">
     <h1> ajouter mon événement </h1>
 
-    <form method="post" action="index.php?page=resultevent">
+    <?php if (!empty($errorsCreate)){
+        ?>
+
+        <div class="err">
+            <p>vous n'avez pas rempli le formulaire correctement :</p>
+            <ul>
+
+            <?php 
+            foreach($errorsCreate as $error){
+                echo '<li>'. $error . '</li>';
+            }?>
+
+            </ul>
+        </div>
+
+    <?php
+    }
+    ?>
+
+    <form method="post" action="index.php?page=addevent">
         <fieldset>
             <div class="thinInput">
                 <label for="name"> nom  :</label>
@@ -26,7 +49,7 @@ ob_start();
 
             <div class="thinInput">
                 <label for="duration"> durée :</br> (min 15 minutes et max 5 heures)</label>
-                <input type="time" max="05:00" min="00:15" id="duration" name="duration" required>
+                <input type="time" max="15:00" min="00:00" id="duration" name="duration" required>
             </div>
 
             <div class="thinInput">
@@ -47,5 +70,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-
 require('view/template.php');

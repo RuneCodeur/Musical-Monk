@@ -1,4 +1,6 @@
 <?php
+session_start();
+include("view/backend/sessionLife.php");
 
 if(isset($_GET['page'])){
     $page= $_GET['page'];
@@ -6,6 +8,14 @@ if(isset($_GET['page'])){
     switch ($page) 						
     {
         
+        case 'mailconfirm':
+            include("view/backend/mailconfirm.php");
+        break;
+
+        case 'confirmcreateaccount':
+            include("view/frontend/confirmcreateaccount.php");
+        break;
+
         case 'resultevent':
             include("view/backend/addevent.php");
         break;
