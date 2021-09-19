@@ -48,8 +48,8 @@ if(isset($_GET['page'])){
             include("view/frontend/addevent.php");
         break;
                 
-        case 'registration':
-            include("view/frontend/registration.php");
+        case 'event':
+            include("view/frontend/event.php");
         break;
                 
         case 'account':

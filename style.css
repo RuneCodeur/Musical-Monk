@@ -162,30 +162,43 @@ footer .footer-block ul {
 }
 
 .contact .info {
-  display: flex;
+  width: 90%;
 }
 
-.contact .info ul {
+.contact .info .info-value {
+  display: flex;
+  width: 90%;
+}
+
+.contact .info .info-value ul {
   margin: 0 60px 0 0;
   padding: 0;
   list-style-type: none;
 }
 
-.contact .info ul li {
+.contact .info .info-value ul li {
   display: flex;
   margin: 15px 0;
 }
 
-.contact .info ul li a {
+.contact .info .info-value ul li a {
   display: flex;
 }
 
-.contact .info ul li i {
+.contact .info .info-value ul li i {
   margin: 5px 10px;
 }
 
-.contact .info ul li p {
+.contact .info .info-value ul li p {
   margin: 0;
+}
+
+.contact .info .info-value #googlemap {
+  width: 90%;
+}
+
+.contact .info .info-value #googlemap iframe {
+  width: 90%;
 }
 
 .addevent form {
@@ -275,4 +288,37 @@ footer .footer-block ul {
 
 .login .ensemble-connection .connection-account form fieldset .submit, .login .ensemble-connection .create-account form fieldset .submit {
   margin-top: 10px;
+}
+
+.planning .event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+  min-height: 300px;
+  min-width: 300px;
+}
+
+.planning .event-list a {
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px 10px;
+  background-color: #84cb68;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 200px;
+}
+
+.planning .event-list a div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.planning .event-list a div p {
+  margin: 0;
+  padding: 0;
 }

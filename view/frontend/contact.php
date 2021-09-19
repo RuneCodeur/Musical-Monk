@@ -15,9 +15,9 @@ ob_start();
         <p>Jeune globetrotteur, Tyller DURDEN décida de crée Musical Monk en 2016 est mis à profit les nombreuses relations qu'il à pus créer durant ses voyages. La petite boutique établi aux abord de Toulouse rencontra un succès meritant dans la vente d'instrurment de musique importé, mais la monotonie se fait vite ressentir dans le magasin. Tyller DURDEN choisi donc de casser le quotidien du quartier en créant des petits evenements metant en avant les musiciens en herbes et occasionels. Au fil du temps, divers types d'evenements dans le theme du magasin vis le jour dans la tête de Tyler ainsi que dans celles de ses collaborateurs.</p>
     </div>
 
-    <div>
+    <div class="info">
         <h2>info pratique</h2>
-        <div class="info"> 
+        <div class="info-value"> 
             <ul>
                 <li>
                     <a href="./ressource/charte-graphique.pdf"><i class="fas fa-file-download"></i> charte graphique Musical Monk</a>
@@ -34,7 +34,7 @@ ob_start();
                     <p> 12 rue des penis <br> 31200 Toulouse </p>
                 </li>
             </ul>
-            <div id="googlemap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92457.01034584246!2d1.362801604073462!3d43.60067857116769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1628606380159!5m2!1sfr!2sfr" width="650" height="288" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+            <div id="googlemap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92457.01034584246!2d1.362801604073462!3d43.60067857116769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x406f69c2f411030!2sToulouse!5e0!3m2!1sfr!2sfr!4v1628606380159!5m2!1sfr!2sfr" height="288" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
         </div>
     </div>
 

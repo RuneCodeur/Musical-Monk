@@ -7,24 +7,35 @@
         margin: 20px;
     }
     .info{
-        display: flex;
-        ul{
-            margin: 0 60px 0 0;
-            padding: 0;
-            list-style-type: none;
-            li{
-                display: flex;
-                margin: 15px 0;
-                a{
+        width: 90%;
+        .info-value{
+            display: flex;
+            width: 90%;
+            ul{
+                margin: 0 60px 0 0;
+                padding: 0;
+                list-style-type: none;
+                li{
                     display: flex;
+                    margin: 15px 0;
+                    a{
+                        display: flex;
+                    }
+                    i{
+                        margin: 5px 10px;
+                    }
+                    p{
+                        margin: 0;
+                    } 
                 }
-                i{
-                    margin: 5px 10px;
-                }
-                p{
-                    margin: 0;
+            }
+            #googlemap{
+                width: 90%;
+                iframe{
+                    width: 90%;
                 }
             }
         }
+
     }
 }
