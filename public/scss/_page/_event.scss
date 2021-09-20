@@ -1,0 +1,38 @@
+.event{
+    div{ 
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .proposed{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            
+            margin: 20px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+    }
+    form{
+        fieldset{
+            padding: 20px;
+            background-color: $colorSecondary;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+            input{
+                margin: 10px;
+            }
+            div{
+                display: flex;
+                flex-direction: row; 
+
+            }
+        }
+    }
+}

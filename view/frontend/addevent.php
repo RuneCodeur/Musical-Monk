@@ -6,7 +6,6 @@ if(!empty($_POST)){
 } 
 
 ?>
-?>
 
 <div class="page addevent">
     <h1> ajouter mon événement </h1>

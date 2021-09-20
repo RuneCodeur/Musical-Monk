@@ -322,3 +322,41 @@ footer .footer-block ul {
   margin: 0;
   padding: 0;
 }
+
+.event div {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event div .proposed {
+  margin: 0;
+  padding: 0;
+}
+
+.event div ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.event form fieldset {
+  padding: 20px;
+  background-color: #baead3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.event form fieldset input {
+  margin: 10px;
+}
+
+.event form fieldset div {
+  display: flex;
+  flex-direction: row;
+}

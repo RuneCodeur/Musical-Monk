@@ -4,6 +4,11 @@ require_once ('connectDB.php');
 
 $errorsCreate = array();
 
+if(empty($_SESSION['auth']['id'])){
+    header('location: index.php?page=planning&err=connection');
+    die;
+}
+
 if(empty($_POST['name'])){
     $errorsCreate['name'] = 'vous n\'avez pas donnée de nom à votre évènement.';
 }
@@ -25,7 +30,7 @@ if(empty($_POST['duration'])){
 }elseif( '00:15' > $_POST['duration']){
     $errorsCreate['duration'] = 'vous ne pouvez pas creer un évènement qui dure moins de 15 minutes.';
 }elseif( '05:00' < $_POST['duration']){
-    $errorsCreate['duration'] = 'vous ne pouvez pas creer un évènement qui dureplus de 5 heures.';
+    $errorsCreate['duration'] = 'vous ne pouvez pas creer un évènement qui dure plus de 5 heures.';
 }
 
 if(empty($_POST['maxRegistration'])){
@@ -40,6 +45,7 @@ if(empty($_POST['description'])){
     $errorsCreate['description'] = 'vous n\'avez pas donnée de description à votre évènement.';
 }
 
+
 if(empty($errorsCreate)){
     $req = $bdd->prepare('INSERT INTO events(name, description, date, duration, creator, max_registration) VALUES(:name, :description, :date, :duration, :creator, :max_registration)');
     $req->execute(array(
@@ -47,7 +53,7 @@ if(empty($errorsCreate)){
     'description' => strip_tags($_POST['description']),
     'date' => strip_tags($_POST['date']) . ' ' . strip_tags($_POST['time']),
     'duration' => strip_tags($_POST['duration']),
-    'creator' => 1,
+    'creator' => $_SESSION['auth']['id'],
     'max_registration' => strip_tags($_POST['maxRegistration'])
     ));
 
