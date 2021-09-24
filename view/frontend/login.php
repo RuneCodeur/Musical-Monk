@@ -43,7 +43,7 @@ if(!empty($_POST)){
     <div class="ensemble-connection">
         <div class="connection-account">
             <h2>j'ai déja un compte</h2>
-            <form method="post" action="">
+            <form method="post" action="index.php?page=login">
                 <fieldset>
                     <div>
                         <label for="pseudo">pseudo :</label>

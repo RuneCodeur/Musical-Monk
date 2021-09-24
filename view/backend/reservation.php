@@ -28,10 +28,14 @@ $req ->execute(array(
 $response = $req->fetch();
 
 if($response == null){
+    session_unset();
+    session_destroy();
     header('location: ../../index.php?page=planning&err=baduser');
     die();
 }else{
     if($response['pseudo'] != $_SESSION['auth']['pseudo']){
+        session_unset();
+        session_destroy();
         header('location: ../../index.php?page=planning&err=baduser');
         die();
     }

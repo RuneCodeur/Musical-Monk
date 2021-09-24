@@ -360,3 +360,52 @@ footer .footer-block ul {
   display: flex;
   flex-direction: row;
 }
+
+.addproduct form {
+  padding: 0;
+}
+
+.addproduct form fieldset {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.addproduct form fieldset div {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.addproduct form fieldset div .number {
+  width: 80px;
+}
+
+.addproduct form fieldset div .price {
+  margin: 0;
+  width: auto;
+  display: flex;
+  justify-content: left;
+}
+
+.addproduct form fieldset .check {
+  padding: 20px 0;
+  background-color: #baead3;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addproduct form fieldset .check div {
+  width: auto;
+  justify-content: left;
+  align-items: center;
+  margin: 0 10px 0 0;
+}
+
+.addproduct form fieldset textarea {
+  min-width: 350px;
+  max-width: 350px;
+}

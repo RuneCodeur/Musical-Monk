@@ -40,7 +40,6 @@ $req = $bdd->prepare('SELECT id FROM events WHERE date > NOW() ORDER BY date LIM
 $req->bindValue('eventpage', ($eventpage*10) + 1, PDO::PARAM_INT);
 $req ->execute();
 if ($response = $req->fetch()){
-    echo
     $nextpage = 1;
 }else{
     $nextpage = 0;
