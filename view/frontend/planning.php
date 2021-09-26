@@ -48,7 +48,7 @@ if ($response = $req->fetch()){
 $req = $bdd->prepare('SELECT events.id as id, events.name as name, users.pseudo as creator, events.registration as registration, events.max_registration as max_registration, events.date as date FROM events INNER JOIN users ON events.creator = users.id WHERE date > NOW() ORDER BY date LIMIT 10 OFFSET :eventpage');
 $req->bindValue('eventpage', ($eventpage*10) - 10, PDO::PARAM_INT);
 $req ->execute();
-
+$response = $req->fetchAll();
 ?>
 
 <div class="page planning">
@@ -62,25 +62,27 @@ $req ->execute();
     <div class="event-list">
 
         <?php
-
-        while($response = $req->fetch()){
-            $date = explode(' ', $response['date']);
+        if(COUNT($response) > 0){
+        foreach($response as $event){
+            $date = explode(' ', $event['date']);
             $hour = explode(':', $date[1]);
             {
             ?>
             
-                <a class="cardevent" href="index.php?page=event&id=<?= $response['id']?>">
-                    <h2> <?= $response['name'] ?> </h2>
+                <a class="cardevent" href="index.php?page=event&id=<?= $event['id']?>">
+                    <h2> <?= $event['name'] ?> </h2>
                     <div>
-                        <p>organisé par <?= $response['creator'] ?></p>
+                        <p>organisé par <?= $event['creator'] ?></p>
                         <p>le <?= $date[0] ?> à <?= $hour[0].':'.$hour[1]?> </p>
-                        <p>participants : <?= $response['registration'] ?> / <?= $response['max_registration'] ?></p>
+                        <p>participants : <?= $event['registration'] ?> / <?= $event['max_registration'] ?></p>
 
                     </div>
                 </a>
 
             <?php
-            }}
+            }}}else{
+                echo '<div class="warn"> Désolé, mais il n\'y as pas d\'évenement prévu pour le moment. </div>';
+            }
         ?>
 
     </div>

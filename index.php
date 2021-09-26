@@ -2,7 +2,10 @@
 session_start();
 include("view/backend/sessionLife.php");
 
-if(isset($_GET['page'])){
+if(isset($_GET['search'])){
+    include("view/frontend/research.php");
+}
+elseif(isset($_GET['page'])){
     $page= $_GET['page'];
             
     switch ($page) 						
@@ -34,10 +37,6 @@ if(isset($_GET['page'])){
                     
         case 'login':
             include("view/frontend/login.php");;
-        break;
-                    
-        case 'research':
-            include("view/frontend/research.php");
         break;
                 
         case 'product':

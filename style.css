@@ -152,6 +152,37 @@ footer .footer-block ul {
   list-style-type: none;
 }
 
+.research-item {
+  margin: 25px 0;
+}
+
+.research-item fieldset {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  max-width: 650px;
+}
+
+.research-item fieldset .param-search {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.research-item fieldset .param-search .search-words {
+  min-width: 100%;
+  height: 30px;
+}
+
+.research-item fieldset .param-search .search-type {
+  margin: 0 5px;
+}
+
+.research-item fieldset .search-submit {
+  height: 35px;
+  width: 100px;
+  margin: 0 20px;
+}
+
 .contact h2 {
   font-size: 25px;
   text-align: center;
@@ -408,4 +439,85 @@ footer .footer-block ul {
 .addproduct form fieldset textarea {
   min-width: 350px;
   max-width: 350px;
+}
+
+.home {
+  border: 3px red solid;
+}
+
+.research .result {
+  width: 100%;
+  min-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.research .result .array {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+}
+
+.research .result .array .produit {
+  padding-left: 5px;
+  text-align: left;
+  border: 3px black solid;
+  margin: 0;
+  width: 50%;
+}
+
+.research .result .array .categorie {
+  padding-left: 5px;
+  border-top: 3px black solid;
+  border-bottom: 3px black solid;
+  margin: 0;
+  width: 25%;
+}
+
+.research .result .array .prix {
+  padding-left: 5px;
+  margin: 0;
+  width: 25%;
+  border: 3px black solid;
+}
+
+.research .result ul {
+  border: 3px black solid;
+  list-style-type: none;
+  width: 94%;
+  margin: 5px;
+  padding: 0;
+}
+
+.research .result ul li a {
+  display: flex;
+  flex-direction: row;
+  height: 35px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.research .result ul li a .produit {
+  padding-left: 5px;
+  text-align: left;
+  margin: 0;
+  width: 50%;
+}
+
+.research .result ul li a .categorie {
+  padding-left: 5px;
+  border-left: 3px black solid;
+  border-right: 3px black solid;
+  margin: 0;
+  width: 25%;
+}
+
+.research .result ul li a .prix {
+  padding-left: 5px;
+  margin: 0;
+  width: 25%;
 }

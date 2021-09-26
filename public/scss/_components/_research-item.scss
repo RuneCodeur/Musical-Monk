@@ -1,0 +1,25 @@
+.research-item{
+    margin: 25px 0;
+    fieldset{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        max-width: 650px;
+        .param-search{
+            display: flex;
+            flex-wrap: wrap;
+            .search-words{
+                min-width: 100%;
+                height: 30px;
+            }
+            .search-type{
+                margin: 0 5px;
+            }
+        }
+        .search-submit{
+            height: 35px;
+            width: 100px;
+            margin: 0 20px;
+        }
+    }
+}

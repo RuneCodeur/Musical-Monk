@@ -73,7 +73,6 @@ if (!empty($errorsCreate)){
                             <input type="radio" name="type" value="<?=$listType['id']?>" id="type<?=$listType['id']?>"<?php if($listType['id'] == 1){ echo 'checked';}?>>
                             <label for="type<?=$listType['id']?>"><?=$listType['name']?></label>
                         </div>
-
                     <?php
                     }
                 }
