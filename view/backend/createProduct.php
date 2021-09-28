@@ -68,8 +68,8 @@ if(empty($errorsCreate)){
         $asource = imagecreatefromjpeg($_FILES['picture']['tmp_name']);
     }
 
-    $largeur_max = 1000;
-    $hauteur_max = 1000;
+    $largeur_max = 500;
+    $hauteur_max = 500;
     $largeur_source = imagesx($asource);
     $hauteur_source = imagesy($asource);
     $ratio = $largeur_source / $hauteur_source;

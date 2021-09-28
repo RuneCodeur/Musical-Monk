@@ -63,7 +63,7 @@ $hourDuration = explode(':', $infoevent['duration']);
         {
         ?>
 
-        <form method="post" action="view/backend/reservation.php?id=<?=$_GET['id']?>">
+        <form method="post" action="view/backend/reserve-event.php?id=<?=$_GET['id']?>">
             <fieldset>
                 <div>
                     <input type="checkbox" name="friend"><label for="friend"> je viens avec un pote</label>

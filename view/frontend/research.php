@@ -8,20 +8,37 @@ $typesearch = $_GET['typesearch'];
 $search = $_GET['search'];
 
 require_once ('view/backend/connectDB.php');
-if($typesearch > 0){
-    $req = $bdd->prepare('SELECT product.id as id, product.name as name, product_type.name as type, product.price as price FROM product INNER JOIN product_type ON product.type = product_type.id WHERE MATCH (product.name, product.description) AGAINST(:value) AND product.type = :type');
-    $req ->execute(array(
-        'value' =>'FRENCH "' . str_replace(' ', '","', htmlspecialchars($search)) .'"',
-        'type' => $typesearch
-    ));
-    $response = $req->fetchAll();
-}else{
-    $req = $bdd->prepare('SELECT product.id as id, product.name as name, product_type.name as type, product.price as price FROM product INNER JOIN product_type ON product.type = product_type.id WHERE MATCH (product.name, product.description) AGAINST(:value)');
-    $req ->execute(array(
-    'value' =>'FRENCH "' . str_replace(' ', '","', htmlspecialchars($search)) .'"'
-    ));
-    $response = $req->fetchAll();
+if(empty($search)){
+    if($typesearch > 0){
+        $req = $bdd->prepare('SELECT product.id as id, product.name as name, product_type.name as type, product.price as price FROM product INNER JOIN product_type ON product.type = product_type.id WHERE product.type = :type');
+        $req ->execute(array(
+            'type' => $typesearch
+        ));
+        $response = $req->fetchAll();
+    }else{
+        $req = $bdd->prepare('SELECT product.id as id, product.name as name, product_type.name as type, product.price as price FROM product INNER JOIN product_type ON product.type = product_type.id');
+        $req ->execute();
+        $response = $req->fetchAll();
+    }
 }
+
+else{
+    if($typesearch > 0){
+        $req = $bdd->prepare('SELECT product.id as id, product.name as name, product_type.name as type, product.price as price FROM product INNER JOIN product_type ON product.type = product_type.id WHERE MATCH (product.name, product.description) AGAINST(:value) AND product.type = :type');
+        $req ->execute(array(
+            'value' =>'FRENCH "' . str_replace(' ', '","', htmlspecialchars($search)) .'"',
+            'type' => $typesearch
+        ));
+        $response = $req->fetchAll();
+    }else{
+        $req = $bdd->prepare('SELECT product.id as id, product.name as name, product_type.name as type, product.price as price FROM product INNER JOIN product_type ON product.type = product_type.id WHERE MATCH (product.name, product.description) AGAINST(:value)');
+        $req ->execute(array(
+        'value' =>'FRENCH "' . str_replace(' ', '","', htmlspecialchars($search)) .'"'
+        ));
+        $response = $req->fetchAll();
+    }
+}
+
 
 ?>
 <div class="page research">
@@ -31,7 +48,7 @@ if($typesearch > 0){
             <div class="param-search">
             <input type="text" name="search" placeholder="Je recherche..." class="search-words">
                 <div>
-                    <input type="radio" name="typesearch" value="0" id="type0" class="search-type" checked>
+                    <input type="radio" name="typesearch" value="0" id="type0" class="search-type" <?php if($typesearch == 0){ echo 'checked';} ?>>
                     <label for="type0">toutes catégories</label>
                 </div>
 
@@ -41,7 +58,7 @@ if($typesearch > 0){
                     while($listType = $req->fetch()){
                         {?>
                             <div>
-                                <input type="radio" name="typesearch" value="<?=$listType['id']?>" id="type<?=$listType['id']?>"  class="search-type">
+                                <input type="radio" name="typesearch" value="<?=$listType['id']?>" id="type<?=$listType['id']?>"  class="search-type" <?php if($typesearch == $listType['id']){ echo 'checked';} ?>>
                                 <label for="type<?=$listType['id']?>"><?=$listType['name']?></label>
                             </div>
                         <?php

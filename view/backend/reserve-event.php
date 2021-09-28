@@ -19,25 +19,26 @@ if(!isset($_SESSION['auth'])){
     header('location: ../../index.php?page=planning&err=connection');
     die();
 }
+else{
+    //test si l'utilisateur est bien lui même
+    $req = $bdd->prepare('SELECT id, pseudo FROM users WHERE id= :id ');
+    $req ->execute(array(
+        'id' => $_SESSION['auth']['id']
+    ));
+    $response = $req->fetch();
 
-//test si l'utilisateur est bien lui même
-$req = $bdd->prepare('SELECT id, pseudo FROM users WHERE id= :id ');
-$req ->execute(array(
-    'id' => $_SESSION['auth']['id']
-));
-$response = $req->fetch();
-
-if($response == null){
-    session_unset();
-    session_destroy();
-    header('location: ../../index.php?page=planning&err=baduser');
-    die();
-}else{
-    if($response['pseudo'] != $_SESSION['auth']['pseudo']){
+    if($response == null){
         session_unset();
         session_destroy();
         header('location: ../../index.php?page=planning&err=baduser');
         die();
+    }else{
+        if($response['pseudo'] != $_SESSION['auth']['pseudo']){
+            session_unset();
+            session_destroy();
+            header('location: ../../index.php?page=planning&err=baduser');
+            die();
+        }
     }
 }
 
