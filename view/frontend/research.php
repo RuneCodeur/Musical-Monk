@@ -86,9 +86,9 @@ else{
                     {?>
                         <li>
                             <a href="index.php?page=product&id=<?= $product['id']?>">
-                            <p class="produit"><?= $product['name']?></p>
-                            <p class="categorie"><?= $product['type']?></p>
-                            <p class="prix"><?= $product['price']?>€</p>
+                                <p class="produit"><?= $product['name']?></p>
+                                <p class="categorie"><?= $product['type']?></p>
+                                <p class="prix"><?= $product['price']?>€</p>
                             </a>
                         </li>
                     <?php

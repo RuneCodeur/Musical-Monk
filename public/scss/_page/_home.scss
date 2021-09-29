@@ -1,3 +1,59 @@
 .home{
-    border: 3px blue solid;
+    .presentation{
+        background-image: url('./public/images/picture-home.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: row;
+        .type-product{
+            background-color: transparentize($colorSecondary, 0.2) ;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .exemple{
+                border-radius: 10px 10px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                margin:  0 10px 20px 10px;
+                background-color: $colorPrimary;
+                img{
+                    margin: 10px;
+                }
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 10px;
+                }
+            }
+        }
+        .type-event{
+            background-color: transparentize($colorSecondary, 0.2) ;
+            background-size: cover;
+            background-position: center;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .exemple{
+                border-radius: 10px 10px;
+                background-color: $colorPrimary;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                margin:  0 0 20px 0;
+                flex-direction: column;
+                p{
+                    margin: 30px 10px;
+                    text-align: center;
+                }
+                
+            }
+        }
+    }
 }

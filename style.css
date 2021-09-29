@@ -441,8 +441,68 @@ footer .footer-block ul {
   max-width: 350px;
 }
 
-.home {
-  border: 3px blue solid;
+.home .presentation {
+  background-image: url("./public/images/picture-home.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.home .presentation .type-product {
+  background-color: rgba(186, 234, 211, 0.8);
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home .presentation .type-product .exemple {
+  border-radius: 10px 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 10px 20px 10px;
+  background-color: #84cb68;
+}
+
+.home .presentation .type-product .exemple img {
+  margin: 10px;
+}
+
+.home .presentation .type-product .exemple div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+.home .presentation .type-event {
+  background-color: rgba(186, 234, 211, 0.8);
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home .presentation .type-event .exemple {
+  border-radius: 10px 10px;
+  background-color: #84cb68;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0 0 20px 0;
+  flex-direction: column;
+}
+
+.home .presentation .type-event .exemple p {
+  margin: 30px 10px;
+  text-align: center;
 }
 
 .research .result {
