@@ -25,7 +25,6 @@ if($response['token_validation'] == $token){
     exit();
 
 }else{
-    
     header('location: index.php?page=login&error=invalidtoken');
     exit();
 }

@@ -6,6 +6,8 @@ if(isset($_GET['win'])){
         echo '<div class="win"> Votre évènement à été ajouté à la liste ! </div>';
     }elseif($_GET['win'] == 'registration'){
         echo '<div class="win"> Vous avez été correctement enregistré pour cet évènement ! </div>';
+    }elseif($_GET['win'] == 'eventmodified'){
+        echo '<div class="win"> Votre évènement à bien été modifié ! </div>';
     }
 }
 if(isset($_GET['err'])){
@@ -19,6 +21,8 @@ if(isset($_GET['err'])){
         echo '<div class="err"> vous n\'êtes pas celui que vous prétendez être. </div>';
     }elseif($_GET['err'] == 'noplace'){
         echo '<div class="err"> Désolé, mais il n\'y as pas assez de place pour vous pour cet évènement. </div>';
+    }elseif($_GET['err'] == 'alt'){
+        echo '<div class="err"> Tu ne vend pas de bâton de la mort, tu vas rentrer chez toi et penser à ton avenir. </div>';
     }
     else{
         echo '<div class="err"> une erreur est survenu, veuillez réessayer plus tard. </div>';
@@ -53,7 +57,7 @@ $response = $req->fetchAll();
 
 <div class="page planning">
     <h1> évènements </h1>
-        
+
     <?php if(!empty($_SESSION['auth']['id'])){
         echo '<a href="index.php?page=addevent">Je crée mon évènement</a>';
     }

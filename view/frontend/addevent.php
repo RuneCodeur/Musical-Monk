@@ -8,7 +8,7 @@ if(!empty($_POST)){
 ?>
 
 <div class="page addevent">
-    <h1> ajouter mon événement </h1>
+    <h1> ajouter un événement </h1>
 
     <?php if (!empty($errorsCreate)){
         ?>

@@ -34,6 +34,10 @@ elseif(isset($_GET['page'])){
         case 'addproduct':
             include("view/frontend/addproduct.php");
         break;
+
+        case 'modifyevent':
+            include("view/frontend/modify-event.php");
+        break;
                     
         case 'login':
             include("view/frontend/login.php");;

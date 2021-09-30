@@ -636,3 +636,83 @@ footer .footer-block ul {
 .product div form fieldset #submit {
   margin: 10px 0;
 }
+
+.account {
+  border: 3px blue solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.account h2 {
+  text-align: center;
+}
+
+.account .reserved {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.account .reserved .product, .account .reserved .events {
+  height: 100%;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.account .reserved .product .item-product, .account .reserved .product .item-event, .account .reserved .events .item-product, .account .reserved .events .item-event {
+  display: flex;
+  flex-direction: row;
+}
+
+.account .reserved .product .item-product a, .account .reserved .product .item-event a, .account .reserved .events .item-product a, .account .reserved .events .item-event a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  border-top: 3px black solid;
+  border-bottom: 3px black solid;
+}
+
+.account .reserved .product .item-product a div, .account .reserved .product .item-event a div, .account .reserved .events .item-product a div, .account .reserved .events .item-event a div {
+  border-left: 3px black solid;
+  padding: 0 10px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.account .reserved .product .item-product .delete, .account .reserved .product .item-event .delete, .account .reserved .events .item-product .delete, .account .reserved .events .item-event .delete {
+  border: none;
+  background-color: red;
+  border: 3px black solid;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.account .leader-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account .leader-event a {
+  width: 75%;
+  border-top: 3px black solid;
+  border-bottom: 3px black solid;
+  border-right: 3px black solid;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.account .leader-event a div {
+  padding: 0 10px;
+  border-left: 3px black solid;
+}

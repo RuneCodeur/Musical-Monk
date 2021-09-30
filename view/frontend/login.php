@@ -1,6 +1,12 @@
 <?php $title = 'Musical-Monk';
 ob_start();
 
+if(isset($_GET['err'])){
+    if($_GET['err'] == 'invalidtoken'){
+        echo '<div class="err"> désolé, ce lien n\'est pas valide.</div>';
+    }
+}
+
 if(!empty($_POST)){
     if (isset($_POST['create-pseudo']) || isset($_POST['create-mail']) || isset($_POST['create-mdp']) || isset($_POST['confirm-mdp'])){
         include('view/backend/createAccount.php');
@@ -8,7 +14,7 @@ if(!empty($_POST)){
     if (isset($_POST['connect-pseudo']) || isset($_POST['connect-mdp'])){
         include('view/backend/connectAccount.php');
     }
-} 
+}
 ?>
 
 <div class="page login">

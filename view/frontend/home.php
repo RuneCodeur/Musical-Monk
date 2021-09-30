@@ -5,12 +5,17 @@ if(isset($_GET['win'])){
     if($_GET['win'] == 'addproduct'){
         echo '<div class="win"> Le produit à bien été rajouté. </div>';
     }
+    elseif($_GET['win'] == 'registredproduct'){
+        echo '<div class="win"> Le produit à bien été réservé. </div>';
+    }
 }
 if(isset($_GET['err'])){
     if($_GET['err'] == 'unauthorized'){
         echo '<div class="err"> Vous n\'êtes pas authorisé à vous rendre ici. </div>';
     }elseif($_GET['err'] == 'disconnect'){
         echo '<div class="err"> Vous avez été déconecté de votre session. </div>';
+    }elseif($_GET['err'] == 'baduser'){
+        echo '<div class="err"> vous n\'êtes pas celui que vous prétendez être. </div>';
     }
     else{
         echo '<div class="err"> une erreur est survenu, veuillez réessayer plus tard. </div>';
@@ -91,7 +96,7 @@ if(isset($_GET['err'])){
                 $hour = explode(':', $date[1]);
                 ?>
          
-                <a href="index.php?page=product&id=<?= $event['id']?>" class="exemple">
+                <a href="index.php?page=event&id=<?= $event['id']?>" class="exemple">
                     <p><?=$event['name']?></p>
                     <p>le <?= $date[0] ?> </br> à <?= $hour[0].':'.$hour[1]?> </p>
                 </a>

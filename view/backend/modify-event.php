@@ -1,11 +1,24 @@
 <?php
-date_default_timezone_set('Europe/Paris');
-require_once ('connectDB.php');
-
-$errorsCreate = array();
 
 if(!isset($_SESSION['auth']['id'])){
     header('location: index.php?page=planning&err=connection');
+    die;
+}
+
+if(isset($_GET['id'])){
+    $req = $bdd->prepare('SELECT creator, registration FROM events WHERE id= :id ');
+    $req ->execute(array(
+        'id' => $_GET['id']
+    ));
+    $event = $req->fetch();
+    if($event['creator'] != $_SESSION['auth']['id']){
+        session_unset();
+        session_destroy();
+        header('location: index.php?page=planning&err=baduser');
+        die;
+    }
+}else{
+    header('location: index.php?page=planning&err=badevent');
     die;
 }
 
@@ -33,29 +46,20 @@ if(empty($_POST['duration'])){
     $errorsCreate['duration'] = 'vous ne pouvez pas creer un évènement qui dure plus de 5 heures.';
 }
 
-if(empty($_POST['maxRegistration'])){
-    $errorsCreate['maxRegistration'] = 'vous n\'avez pas donnée de durée à votre évènement.';
-}elseif( 5 > $_POST['maxRegistration']){
-    $errorsCreate['maxRegistration'] = 'vous ne pouvez pas creer un évènement pour moins de 5 personnes.';
-}elseif( 50 < $_POST['maxRegistration']){
-    $errorsCreate['maxRegistration'] = 'vous ne pouvez pas creer un évènement pour plus de 50 personnes.';
-}
-
 if(empty($_POST['description'])){
     $errorsCreate['description'] = 'vous n\'avez pas donnée de description à votre évènement.';
 }
 
 
 if(empty($errorsCreate)){
-    $req = $bdd->prepare('INSERT INTO events(name, description, date, duration, creator, max_registration) VALUES(:name, :description, :date, :duration, :creator, :max_registration)');
+    $req = $bdd->prepare('UPDATE events SET name =:name, description =:description, date =:date, duration =:duration WHERE id = :id');
     $req->execute(array(
-    'name' => strip_tags($_POST['name']),
-    'description' => strip_tags($_POST['description']),
-    'date' => strip_tags($_POST['date']) . ' ' . strip_tags($_POST['time']),
-    'duration' => strip_tags($_POST['duration']),
-    'creator' => $_SESSION['auth']['id'],
-    'max_registration' => strip_tags($_POST['maxRegistration'])
+        'name' => strip_tags($_POST['name']),
+        'description' => strip_tags($_POST['description']),
+        'date' => strip_tags($_POST['date']) . ' ' . strip_tags($_POST['time']),
+        'duration' => strip_tags($_POST['duration']),
+        'id' => $_GET['id']
     ));
 
-    header('location: index.php?page=planning&win=eventCreated');
+    header('location: index.php?page=planning&win=eventmodified');
 }
