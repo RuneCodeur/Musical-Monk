@@ -57,7 +57,7 @@ if(isset($_GET['deleteproduct'])){
 
 
 
-
+//si toutes les valeurs sont ok
 $req = $bdd->prepare('DELETE FROM reserved_product WHERE id = :id');
 $req ->execute(array(
     'id' => $_GET['deleteproduct']

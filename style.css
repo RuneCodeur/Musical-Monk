@@ -23,7 +23,6 @@ html, body {
 }
 
 .page {
-  border: 3px solid #f6c356;
   max-width: 90%;
   padding: 10px;
   display: flex;
@@ -36,6 +35,7 @@ h1 {
   margin: 10px;
   font-size: 30px;
   text-decoration: underline;
+  text-align: center;
 }
 
 .win {
@@ -78,6 +78,7 @@ header #account {
 header #account a {
   display: flex;
   align-items: center;
+  text-decoration: none;
   height: 100%;
   padding: 0 20px;
 }
@@ -95,7 +96,28 @@ header #title img {
   max-height: 250px;
 }
 
-header nav {
+header #title .logo-mobile {
+  display: none;
+}
+
+header #title .logo-desktop {
+  display: flex;
+}
+
+header #navigation {
+  width: 100%;
+  border: none;
+  height: auto;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+header #navigation span {
+  display: none;
+}
+
+header #navigation nav {
   width: 90%;
   height: 70px;
   align-items: center;
@@ -105,7 +127,8 @@ header nav {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-header nav a {
+header #navigation nav a {
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,14 +136,74 @@ header nav a {
   height: 100%;
   background-color: #84cb68;
   border-radius: 20px 20px 0 0;
+  font-size: 30px;
   margin: 0 5px;
   padding: 0 5px;
   width: 20%;
   font-weight: bolder;
 }
 
-header nav a:hover {
-  text-decoration: underline;
+@media screen and (max-width: 750px) {
+  header {
+    background-position: top;
+    background-size: 100%;
+    border-radius: 0 0 10px 10px;
+  }
+  header #title .logo-desktop {
+    display: none;
+  }
+  header #title .logo-mobile {
+    display: flex;
+  }
+  header #navigation {
+    background-color: #84cb68;
+    border-radius: 0 0 10px 10px;
+    display: inline-block;
+    flex-direction: column;
+  }
+  header #navigation span {
+    width: 100%;
+    border: none;
+    position: relative;
+    background-color: #61b73f;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header #navigation span i {
+    margin: 0 10px;
+  }
+  header #navigation span p {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  header #navigation nav {
+    transition-duration: 0.7s;
+    overflow: hidden;
+    position: relative;
+    background-color: #84cb68;
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    max-height: 0;
+    border-radius: 0 0 10px 10px;
+  }
+  header #navigation nav a {
+    border-bottom: 3px black solid;
+    margin: 5px 0;
+    border-radius: 0;
+    width: 90%;
+    padding: 0;
+    font-size: 25px;
+  }
+  header #navigation:hover nav {
+    max-height: 180px;
+  }
 }
 
 footer {
@@ -169,7 +252,8 @@ footer .footer-block ul {
 }
 
 .research-item fieldset .param-search .search-words {
-  min-width: 100%;
+  text-overflow: ellipsis;
+  width: 100%;
   height: 30px;
 }
 
@@ -340,6 +424,7 @@ footer .footer-block ul {
   align-items: center;
   text-decoration: none;
   width: 200px;
+  height: 180px;
 }
 
 .planning .event-list a div {
@@ -352,6 +437,14 @@ footer .footer-block ul {
 .planning .event-list a div p {
   margin: 0;
   padding: 0;
+}
+
+.planning .event-list a:hover {
+  background-color: #61b73f;
+}
+
+.event {
+  background-color: #f6c356;
 }
 
 .event div {
@@ -393,7 +486,11 @@ footer .footer-block ul {
 }
 
 .addproduct form {
-  padding: 0;
+  background-color: #f6c356;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .addproduct form fieldset {
@@ -423,8 +520,8 @@ footer .footer-block ul {
 }
 
 .addproduct form fieldset .check {
-  padding: 20px 0;
-  background-color: #baead3;
+  padding: 20px 5px;
+  background-color: #f3ae1c;
   display: flex;
   flex-wrap: wrap;
 }
@@ -460,7 +557,7 @@ footer .footer-block ul {
 
 .home .presentation .type-product .exemple {
   border-radius: 10px 10px;
-  height: 100%;
+  height: 220px;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -470,6 +567,8 @@ footer .footer-block ul {
 
 .home .presentation .type-product .exemple img {
   margin: 10px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .home .presentation .type-product .exemple div {
@@ -503,6 +602,12 @@ footer .footer-block ul {
 .home .presentation .type-event .exemple p {
   margin: 30px 10px;
   text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  .home .presentation {
+    flex-direction: column;
+  }
 }
 
 .research .result {
@@ -582,6 +687,10 @@ footer .footer-block ul {
   width: 25%;
 }
 
+.research .result ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
 .product div {
   display: flex;
   flex-direction: row;
@@ -607,6 +716,7 @@ footer .footer-block ul {
 .product div form {
   width: auto;
   margin: 0;
+  margin-top: 50px;
   padding: 0;
 }
 
@@ -616,16 +726,16 @@ footer .footer-block ul {
   width: auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .product div form fieldset p {
-  margin: 0 10px;
+  margin: 0;
 }
 
 .product div form fieldset div {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .product div form fieldset #quantity {
@@ -638,7 +748,6 @@ footer .footer-block ul {
 }
 
 .account {
-  border: 3px blue solid;
   display: flex;
   flex-direction: column;
   align-items: center;

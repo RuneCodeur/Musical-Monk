@@ -68,7 +68,7 @@ if(isset($_GET['err'])){
                 ?>
          
                 <a href="index.php?page=product&id=<?= $item['id']?>" class="exemple">
-                    <img src="<?=$item['picture']?>" alt="<?=$item['name']?>" width="200px">
+                    <img src="<?=$item['picture']?>" alt="<?=$item['name']?>">
                     <div>
                         <p><?=$item['name']?></p>
                         <p><?=$item['price']?> €</p>
@@ -93,12 +93,13 @@ if(isset($_GET['err'])){
                 echo '<p> il n\'y a pas d\'évènement prévu pour le moment </p>';
             }else{
                 $date = explode(' ', $event['date']);
+                $day = explode('-', $date[0]);
                 $hour = explode(':', $date[1]);
                 ?>
          
                 <a href="index.php?page=event&id=<?= $event['id']?>" class="exemple">
                     <p><?=$event['name']?></p>
-                    <p>le <?= $date[0] ?> </br> à <?= $hour[0].':'.$hour[1]?> </p>
+                    <p>le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> </br> à <?= $hour[0].':'.$hour[1]?> </p>
                 </a>
 
                 <?php

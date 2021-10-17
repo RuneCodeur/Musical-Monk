@@ -14,7 +14,7 @@
             align-items: center;
             .exemple{
                 border-radius: 10px 10px;
-                height: 100%;
+                height: 220px;
                 display: flex;
                 align-items: center;
                 text-decoration: none;
@@ -22,6 +22,8 @@
                 background-color: $colorPrimary;
                 img{
                     margin: 10px;
+                    max-width: 200px;
+                    max-height: 200px;
                 }
                 div{
                     display: flex;
@@ -55,5 +57,12 @@
                 
             }
         }
+    }
+}
+
+
+@media screen and (max-width: 750px){
+    .home .presentation{
+        flex-direction: column;
     }
 }

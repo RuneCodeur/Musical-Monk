@@ -1,10 +1,10 @@
 <?php
 
+//test si l'utilisateur est bien lui même
 if(!isset($_SESSION['auth']['id'])){
     header('location: index.php?page=planning&err=connection');
     die;
 }
-
 if(isset($_GET['id'])){
     $req = $bdd->prepare('SELECT creator, registration FROM events WHERE id= :id ');
     $req ->execute(array(
@@ -22,10 +22,12 @@ if(isset($_GET['id'])){
     die;
 }
 
+//test si le nom est valide
 if(empty($_POST['name'])){
     $errorsCreate['name'] = 'vous n\'avez pas donnée de nom à votre évènement.';
 }
 
+//test si la date est valide
 if(empty($_POST['date'])){
     $errorsCreate['date'] = 'vous n\'avez pas donnée de date à votre évènement.';
 }elseif(date("Y-m-d") > $_POST['date']){
@@ -34,10 +36,12 @@ if(empty($_POST['date'])){
     $errorsCreate['date'] = 'vous ne pouvez pas creer un évènement dans le passée.';
 }
 
+//test si l'heure est valide
 if(empty($_POST['time'])){
     $errorsCreate['time'] = 'vous n\'avez pas donnée d\'heure à votre évènement.';
 }
 
+//test si la durée est valide
 if(empty($_POST['duration'])){
     $errorsCreate['duration'] = 'vous n\'avez pas donnée de durée à votre évènement.';
 }elseif( '00:15' > $_POST['duration']){
@@ -46,11 +50,12 @@ if(empty($_POST['duration'])){
     $errorsCreate['duration'] = 'vous ne pouvez pas creer un évènement qui dure plus de 5 heures.';
 }
 
+//test si la description est valide
 if(empty($_POST['description'])){
     $errorsCreate['description'] = 'vous n\'avez pas donnée de description à votre évènement.';
 }
 
-
+//si toutes les valeurs sont ok
 if(empty($errorsCreate)){
     $req = $bdd->prepare('UPDATE events SET name =:name, description =:description, date =:date, duration =:duration WHERE id = :id');
     $req->execute(array(

@@ -29,7 +29,7 @@ if(isset($_SESSION['auth'])){
 }
 
 
-//check si l'id envoyé est valide
+//check si l'id de l'évènement est valide
 if(isset($_GET['deleteevent'])){
     if(preg_match('/^[0-9]+$/', $_GET['deleteevent'])){
         $req = $bdd->prepare('SELECT * FROM reserved WHERE id= :id ');
@@ -63,8 +63,7 @@ if(isset($_GET['deleteevent'])){
 }
 
 
-
-
+//si toutes les valeurs sont ok
 $req = $bdd->prepare('DELETE FROM reserved WHERE id = :id');
 $req ->execute(array(
     'id' => $_GET['deleteevent']

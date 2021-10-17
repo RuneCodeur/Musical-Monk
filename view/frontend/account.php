@@ -34,7 +34,7 @@ if(isset($_GET['win'])){
 ?>
 
 <div class="page account">
-    <a href="view/backend/sessionDestroy.php">me deconnecter</a>
+    <a href="view/backend/session-destroy.php">me deconnecter</a>
     <h1>Mon compte personnel</h1>
 
     <div class="myaccount">
@@ -44,54 +44,77 @@ if(isset($_GET['win'])){
     <div>
         <h2>mes reservations</h2>
         <div class="reserved">
-            <div class='product'>
-                <h3>produit</h3>
 
                 <?php
                     $req = $bdd->prepare('SELECT product.id as product, product.name as name, product.price as price, reserved_product.id as id, reserved_product.quantity as quantity FROM reserved_product INNER JOIN product ON reserved_product.product = product.id WHERE reserved_product.user = :user ');
                     $req ->execute(array(
                         'user' => $_SESSION['auth']['id']
                     ));
-                    while($product = $req->fetch()){
+                    $product = $req->fetchall();
+
+                    if(!empty($product)){
+
                         ?>
 
-                        <div class="item-product">
-                            <a href="index.php?page=product&id=<?=$product['product']?>">
-                                <div><?=$product['name']?></div>
-                                <div> quantité: <?=$product['quantity']?></div>
-                                <div> prix: <?=$product['price'] * $product['quantity']?> €</div>
-                            </a>
-                            <a href="view/backend/delete-reserve-product.php?deleteproduct=<?=$product['id']?>" class="delete">X</a>
-                        </div>
-                    
-                    <?php
-                    } 
-                    ?>
-            </div>
+                            <div class='product'>
+                            <h3>produit</h3>
 
-            <div class='events'>
-                <h3>évènements</h3>
+                        <?php
+                        foreach($product as $elem){
 
-                <?php
+                            ?>
+
+                            <div class="item-product">
+                                <a href="index.php?page=product&id=<?=$elem['product']?>">
+                                    <div><?=$elem['name']?></div>
+                                    <div> quantité: <?=$elem['quantity']?></div>
+                                    <div> prix: <?=$elem['price'] * $elem['quantity']?> €</div>
+                                </a>
+                                <a href="view/backend/delete-reserve-product.php?deleteproduct=<?=$elem['id']?>" class="delete">X</a>
+                            </div>
+
+                            <?php
+                        }
+                        echo '</div>' ;
+                    }
+
+
+
                     $req = $bdd->prepare('SELECT events.id as event, reserved.id as id, reserved.friend as friend, events.name as name, events.date as date FROM reserved INNER JOIN events ON reserved.event = events.id WHERE reserved.user = :user AND date > NOW() ORDER BY date ');
                     $req ->execute(array(
                         'user' => $_SESSION['auth']['id']
                     ));
-                    while($event = $req->fetch()){
-                        $date = explode(' ', $event['date']);
-                        $hour = explode(':', $date[1]);
+                    $event = $req ->fetchall();
+                    if (!empty($event)){
+
                         ?>
+                            <div class='events'>
+                            <h3>évènements</h3>
+            
+                        <?php
+
+                        foreach($event as $elem){
+                            $date = explode(' ', $elem['date']);
+                            $day = explode('-', $date[0]);
+                            $hour = explode(':', $date[1]);
+
+                            ?>
+                            
+                            <div class="item-event">
+                                <a href="index.php?page=event&id=<?=$elem['event']?>">
+                                    <div><?=$elem['name']?></div>
+                                    <div>le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0].':'.$hour[1]?></div>
+                                    <div> <?php if($elem['friend'] == 1){echo 'je viens avec un ami';}else{echo 'je viens tout seul';}?></div>
+                                </a>
+                                <a href="view/backend/delete-reserve-event.php?deleteevent=<?=$elem['id']?>" class="delete">X</a>
+                            </div>
                         
-                        <div class="item-event">
-                            <a href="index.php?page=event&id=<?=$event['event']?>">
-                                <div><?=$event['name']?></div>
-                                <div>le <?= $date[0] ?> à <?= $hour[0].':'.$hour[1]?></div>
-                                <div> <?php if($event['friend'] == 1){echo 'je viens avec un ami';}else{echo 'je viens tout seul';}?></div>
-                            </a>
-                            <a href="view/backend/delete-reserve-event.php?deleteevent=<?=$event['id']?>" class="delete">X</a>
-                        </div>
-                    
-                    <?php
+                        <?php
+                        }
+                    }
+
+                    if(empty($product) & empty($event)){
+                        echo '<p>Tu n\'a aucune reservation</p>';
                     }
                     ?>
             </div>

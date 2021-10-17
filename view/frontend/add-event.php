@@ -2,7 +2,7 @@
 ob_start();
 
 if(!empty($_POST)){
-    include('view/backend/addevent.php');
+    include('view/backend/create-event.php');
 } 
 
 ?>

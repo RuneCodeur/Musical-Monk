@@ -41,7 +41,6 @@ $product = $req->fetch();
         <img src="<?=$product['picture']?>" alt="<?=$product['name']?>">
         <div class="carac-product">
             <p><?=$product['description']?></p>
-            <p class="price">prix (unité) : <?=$product['price']?> €</p>
 
             <?php 
             
@@ -56,7 +55,8 @@ $product = $req->fetch();
 
             <form method="post" action="index.php?page=product&id=<?=$_GET['id']?>">
                 <fieldset>
-                    <p>disponible : <?=$product['quantity']?></p>
+                    <p class="price">prix (unité) : <?=$product['price']?> €</p>
+                    <p class="quantity">disponible : <?=$product['quantity']?></p>
                     <div>
                         <label for="quantity"> quantité que je reserve : </label>
                         <input type="number" name="quantity" id="quantity" value="1">

@@ -9,10 +9,10 @@ if(isset($_GET['err'])){
 
 if(!empty($_POST)){
     if (isset($_POST['create-pseudo']) || isset($_POST['create-mail']) || isset($_POST['create-mdp']) || isset($_POST['confirm-mdp'])){
-        include('view/backend/createAccount.php');
+        include('view/backend/create-account.php');
     }
     if (isset($_POST['connect-pseudo']) || isset($_POST['connect-mdp'])){
-        include('view/backend/connectAccount.php');
+        include('view/backend/connect-account.php');
     }
 }
 ?>

@@ -9,7 +9,8 @@
             display: flex;
             flex-wrap: wrap;
             .search-words{
-                min-width: 100%;
+                text-overflow: ellipsis;
+                width: 100%;
                 height: 30px;
             }
             .search-type{

@@ -69,6 +69,7 @@ $response = $req->fetchAll();
         if(COUNT($response) > 0){
         foreach($response as $event){
             $date = explode(' ', $event['date']);
+            $day = explode('-', $date[0]);
             $hour = explode(':', $date[1]);
             {
             ?>
@@ -77,7 +78,7 @@ $response = $req->fetchAll();
                     <h2> <?= $event['name'] ?> </h2>
                     <div>
                         <p>organisé par <?= $event['creator'] ?></p>
-                        <p>le <?= $date[0] ?> à <?= $hour[0].':'.$hour[1]?> </p>
+                        <p>le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0].':'.$hour[1]?> </p>
                         <p>participants : <?= $event['registration'] ?> / <?= $event['max_registration'] ?></p>
 
                     </div>

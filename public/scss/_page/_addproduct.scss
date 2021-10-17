@@ -1,6 +1,10 @@
 .addproduct{
     form{
-        padding: 0;
+        background-color: $colorQuatuary;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         fieldset{
             padding: 0;
             display: flex;
@@ -23,8 +27,8 @@
                 }
             }
             .check{
-                padding: 20px 0;
-                background-color: $colorSecondary;
+                padding: 20px 5px;
+                background-color: darken($color: $colorQuatuary, $amount: 12);
                 display: flex;
                 flex-wrap: wrap;
                 div{

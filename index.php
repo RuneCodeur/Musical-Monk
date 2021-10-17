@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("view/backend/sessionLife.php");
+include("view/backend/session-life.php");
 
 if(isset($_GET['search'])){
     include("view/frontend/research.php");
@@ -12,15 +12,15 @@ elseif(isset($_GET['page'])){
     {
         
         case 'mailconfirm':
-            include("view/backend/mailconfirm.php");
+            include("view/backend/mail-confirm.php");
         break;
 
         case 'confirmcreateaccount':
-            include("view/frontend/confirmcreateaccount.php");
+            include("view/frontend/confirm-create-account.php");
         break;
 
         case 'resultevent':
-            include("view/backend/addevent.php");
+            include("view/backend/add-event.php");
         break;
 
         case 'planning':
@@ -32,7 +32,7 @@ elseif(isset($_GET['page'])){
         break;
                     
         case 'addproduct':
-            include("view/frontend/addproduct.php");
+            include("view/frontend/add-product.php");
         break;
 
         case 'modifyevent':
@@ -48,7 +48,7 @@ elseif(isset($_GET['page'])){
         break;
                 
         case 'addevent':
-            include("view/frontend/addevent.php");
+            include("view/frontend/add-event.php");
         break;
                 
         case 'event':

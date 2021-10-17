@@ -18,6 +18,7 @@ header{
         a{
             display: flex;
             align-items: center;
+            text-decoration: none;
             height: 100%;
             padding: 0 20px;
         }
@@ -32,30 +33,111 @@ header{
         img{
             max-height: 250px;
         }
-    }
-    nav{
-        width: 90%;
-        height: 70px;
-        align-items: center;
-        padding: 0 5%;
-        display: flex;
-        justify-content: space-around;
-        background-color: rgba(255, 255, 255, 0.6);
-        a{
+        .logo-mobile{
+            display: none;
+        }.logo-desktop{
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100%;
-            background-color: $colorPrimary;
-            border-radius: 20px 20px 0 0;
-            margin: 0 5px;
-            padding: 0 5px;
-            width: 20%;
-            font-weight: bolder;
         }
-        a:hover{
-            text-decoration: underline;
+    }
+    #navigation{
+        width: 100%;
+        border: none;
+        height: auto;
+        background: none;
+        margin: 0;
+        padding: 0;
+        
+        span{
+            display: none;
+        }
+        nav{
+            width: 90%;
+            height: 70px;
+            align-items: center;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(255, 255, 255, 0.6);
+            a{
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 100%;
+                background-color: $colorPrimary;
+                border-radius: 20px 20px 0 0;
+                font-size: 30px;
+                margin: 0 5px;
+                padding: 0 5px;
+                width: 20%;
+                font-weight: bolder; 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px){
+    header{
+        background-position: top;
+        background-size: 100%;
+        border-radius: 0 0 10px 10px;
+        #title .logo-desktop{
+            display: none;
+        }
+        #title .logo-mobile{
+            display: flex;
+        }
+        #navigation{
+            background-color: $colorPrimary;
+            border-radius: 0 0 10px 10px;
+            display: inline-block;
+            flex-direction: column;
+            span{
+                width: 100%;
+                border: none;
+                position: relative;
+                background-color: darken($color: $colorPrimary, $amount: 12);
+                border-radius: 0 0 10px 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i{
+                    margin: 0 10px;
+                }
+                p{
+                    margin: 5px 0;
+                    text-align: center;
+                    font-size: 30px;
+                    font-weight: bolder;
+                }
+            }
+            nav{
+                transition-duration: 0.7s;
+                overflow: hidden;
+                position: relative;
+                background-color: $colorPrimary;
+                width: 100%;
+                padding: 0;
+                flex-direction: column;
+                justify-content: flex-start;
+                height: auto;
+                max-height: 0;
+                border-radius: 0 0 10px 10px;
+                a{
+                    border-bottom: 3px black solid;
+                    margin: 5px 0;
+                    border-radius: 0;
+                    width: 90%;
+                    padding: 0;
+                    font-size: 25px;
+                }
+            } 
+        }
+        #navigation:hover{
+            nav{
+                max-height: 180px
+            }
         }
     }
 }

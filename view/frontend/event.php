@@ -2,7 +2,7 @@
 ob_start();
 require_once ('view/backend/connectDB.php');
 
-$req = $bdd->prepare('SELECT events.creator as idcreator, events.name as name, events.description as description, events.date as date, events.duration as duration, events.registration as registration, events.max_registration as max_registration, users.pseudo as creator FROM events INNER JOIN users ON events.creator = users.id WHERE events.id= :id ');
+$req = $bdd->prepare('SELECT events.id as id, events.creator as idcreator, events.name as name, events.description as description, events.date as date, events.duration as duration, events.registration as registration, events.max_registration as max_registration, users.pseudo as creator FROM events INNER JOIN users ON events.creator = users.id WHERE events.id= :id ');
 $req ->execute(array(
     'id' => $_GET['id']
 ));
@@ -13,6 +13,7 @@ if(empty($infoevent)){
 }
 
 $date = explode(' ', $infoevent['date']);
+$day = explode('-', $date[0]);
 $hour = explode(':', $date[1]);
 $hourDuration = explode(':', $infoevent['duration']);
 ?>
@@ -22,13 +23,13 @@ $hourDuration = explode(':', $infoevent['duration']);
     <?php
     if(isset($_SESSION['auth'])){
         if($infoevent['idcreator'] == $_SESSION['auth']['id']){
-            echo '<a href="index.php?page=modifyevent&id='. $infoevent['idcreator'] .'">modifier mon evenement</a>';
+            echo '<a href="index.php?page=modifyevent&id='. $infoevent['id'] .'">modifier mon evenement</a>';
         }
     }
     ?>
     <div>
         <p class="proposed">cet evenement est proposé par <?= $infoevent['creator']?>
-        <br> prévu pour le <?= $date[0]?> à <?= $hour[0] . ':' . $hour[1]?>.</p>
+        <br> prévu pour le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0] . ':' . $hour[1]?>.</p>
         <?php
         if($hourDuration[0] > 0){
             echo '<p> durée prévue : '.$hourDuration[0].' heure(s) et '.$hourDuration[1].' minutes.</p>';

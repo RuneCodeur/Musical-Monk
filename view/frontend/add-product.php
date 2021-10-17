@@ -24,7 +24,7 @@ elseif(isset($_SESSION['auth']['id']) AND isset($_SESSION['auth']['pseudo'])){
     die();
 }
 if(!empty($_POST || $_FILES)){
-    include('view/backend/createProduct.php');
+    include('view/backend/create-product.php');
 }
 
 if (!empty($errorsCreate)){
