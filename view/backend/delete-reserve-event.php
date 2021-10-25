@@ -24,7 +24,8 @@ if(isset($_SESSION['auth'])){
         }
     }
 }else{
-    header('location: ../../index.php?err=disconnect');
+    session_destroy();
+    header('location: ../../index.php?err=connexion');
     die();
 }
 

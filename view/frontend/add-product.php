@@ -1,7 +1,8 @@
 <?php $title = 'Musical-Monk';
 ob_start();
 if(!isset($_SESSION['auth'])){
-    header('location: index.php?err=disconnect');
+    session_destroy();
+    header('location: index.php?err=connexion');
     die();
 }
 
@@ -20,9 +21,11 @@ elseif(isset($_SESSION['auth']['id']) AND isset($_SESSION['auth']['pseudo'])){
         die();
     }
 }else{
-    header('location: index.php?err=disconnect');
+    session_destroy();
+    header('location: index.php?err=connexion');
     die();
 }
+
 if(!empty($_POST || $_FILES)){
     include('view/backend/create-product.php');
 }
@@ -31,7 +34,7 @@ if (!empty($errorsCreate)){
     ?>
 
     <div class="err">
-        <p>vous n'avez pas rempli le formulaire correctement :</p>
+        <p>Vous n'avez pas rempli le formulaire correctement :</p>
         <ul>
 
         <?php 
@@ -48,17 +51,17 @@ if (!empty($errorsCreate)){
 
 <div class="page addproduct">
 
-<h1> ajouter un produit</h1>
+<h1>Ajouter un produit</h1>
     <div class="warn"> ATTENTION : Cette page est réservé aux admins. </div>
 
     <form method="post" action="index.php?page=addproduct" enctype="multipart/form-data">
         <fieldset>
             <div>
-                <label for="title">nom du produit : </label>
+                <label for="title">Nom du produit : </label>
                 <input type="text" name="title">
             </div>
             <div>
-                <label for="picture">photo : </label>
+                <label for="picture">Photo : </label>
                 <input type="file" name="picture" id="picture">
             </div>
             
@@ -79,15 +82,15 @@ if (!empty($errorsCreate)){
                 ?>
             </div>
             <div>
-                <label for="quantity">quantité disponible : </label>
+                <label for="quantity">Quantité disponible : </label>
                 <input type="number" name="quantity" class="number" value='1'>
             </div>
             <div>
-                <label for="price">prix (euros) : </label>
+                <label for="price">Prix (euros) : </label>
                 <div class="price"><input type="number" name="price" class="number" step="0.01">€</div>
             </div>
             <div>
-                <label for="description"> description : </label>
+                <label for="description">Description : </label>
                 <textarea name="description"></textarea>
             </div>
         </fieldset>

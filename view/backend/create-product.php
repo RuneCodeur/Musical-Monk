@@ -1,10 +1,35 @@
 <?php
 
-require_once ('view/backend/connectDB.php');
+require_once ('connectDB.php');
 
 $errorsCreate = array();
-$title = htmlspecialchars($_POST['title']);
-$description = htmlspecialchars($_POST['description']);
+
+//test si l'utilisateur est valide 
+if(!isset($_SESSION['auth'])){
+    session_destroy();
+    header('location: index.php?err=connexion');
+    die();
+}
+
+elseif(isset($_SESSION['auth']['id']) AND isset($_SESSION['auth']['pseudo'])){
+    require_once ('view/backend/connectDB.php');
+    $req = $bdd->prepare('SELECT admin FROM users WHERE pseudo = :pseudo AND id = :id');
+    $req ->execute(array(
+        'pseudo' => $_SESSION['auth']['pseudo'],
+        'id' => $_SESSION['auth']['id']
+    ));
+    $user = $req->fetch();
+    if($user['admin'] != 1){
+        session_unset();
+        session_destroy();
+        header('location: index.php?err=unauthorized');
+        die();
+    }
+}else{
+    session_destroy();
+    header('location: index.php?err=connexion');
+    die();
+}
 
 //test si la photo du produit est valide
 if(empty($_FILES['picture']['size'])){
@@ -15,17 +40,21 @@ elseif(!$_FILES['picture']['type'] == 'image/png' || !$_FILES['picture']['type']
 }
 
 //test si le titre est valide
-if(empty($title)){
+if(empty($_POST['title'])){
     $errorsCreate['title'] = "Le produit ne possède pas de nom.";
-}elseif(!preg_match('/^[^\\|*#\/@<>\[\]{}€$£¤§\t\n\r]+$/', $title)){
+}elseif(!preg_match('/^[^\\|*#\/@<>\[\]{}€$£¤§\t\n\r]+$/', $_POST['title'])){
     $errorsCreate['title'] = "Le titre possède un ou plusieurs caractères interdits ( / | \\ * # @ [] <> {} € \$ ¤ £ § ).";
+}else{   
+    $title = htmlspecialchars($_POST['title']);
 }
 
 //test si la description est valide
-if(empty($description)){
+if(empty($_POST['description'])){
     $errorsCreate['description'] = "Le produit ne possède pas de description.";
-}elseif(!preg_match('/^[^|<>\[\]{}¤§\t\r]+$/', $description)){
+}elseif(!preg_match('/^[^|<>\[\]{}¤§\t\r]+$/', $_POST['description'])){
     $errorsCreate['title'] = "la description possède un ou plusieurs caractères interdits (  | [] <> {} ¤ § ).";
+}else{   
+    $description = htmlspecialchars($_POST['description']);
 }
 
 //test si le type est valide

@@ -13,7 +13,7 @@ if (!empty($errorsCreate)){
     ?>
 
     <div class="err">
-        <p>vous n'avez pas rempli le formulaire correctement :</p>
+        <p>Vous n'avez pas rempli le formulaire correctement :</p>
         <ul>
 
         <?php 
@@ -55,10 +55,10 @@ $product = $req->fetch();
 
             <form method="post" action="index.php?page=product&id=<?=$_GET['id']?>">
                 <fieldset>
-                    <p class="price">prix (unité) : <?=$product['price']?> €</p>
-                    <p class="quantity">disponible : <?=$product['quantity']?></p>
+                    <p class="price">Prix (unité) : <?=$product['price']?> €</p>
+                    <p class="quantity">Disponible : <?=$product['quantity']?></p>
                     <div>
-                        <label for="quantity"> quantité que je reserve : </label>
+                        <label for="quantity"> Quantité que je reserve : </label>
                         <input type="number" name="quantity" id="quantity" value="1">
                     </div>
                     <input type="submit" id="submit" value="je reserve ce produit">

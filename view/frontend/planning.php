@@ -11,21 +11,17 @@ if(isset($_GET['win'])){
     }
 }
 if(isset($_GET['err'])){
-    if($_GET['err'] == 'connection'){
-        echo '<div class="err"> Vous avez été déconecté de votre session. </div>';
-    }elseif($_GET['err'] == 'badevent'){
+    elseif($_GET['err'] == 'badevent'){
         echo '<div class="err"> Cet evenement n\'existe plus. </div>';
     }elseif($_GET['err'] == 'registred'){
-        echo '<div class="err"> vous êtes déja enregistré pour cet évènement. </div>';
-    }elseif($_GET['err'] == 'baduser'){
-        echo '<div class="err"> vous n\'êtes pas celui que vous prétendez être. </div>';
+        echo '<div class="err"> vous êtes déjà enregistré pour cet évènement. </div>';
     }elseif($_GET['err'] == 'noplace'){
         echo '<div class="err"> Désolé, mais il n\'y as pas assez de place pour vous pour cet évènement. </div>';
     }elseif($_GET['err'] == 'alt'){
         echo '<div class="err"> Tu ne vend pas de bâton de la mort, tu vas rentrer chez toi et penser à ton avenir. </div>';
     }
     else{
-        echo '<div class="err"> une erreur est survenu, veuillez réessayer plus tard. </div>';
+        echo '<div class="err"> Une erreur est survenu, veuillez réessayer plus tard. Si cette erreur persiste, veuillez contacter le créateur à l\'adresse mail suivante : rackhamledev@gmail.com</div>';
     }
 }
 require_once ('view/backend/connectDB.php');
@@ -77,9 +73,9 @@ $response = $req->fetchAll();
                 <a class="cardevent" href="index.php?page=event&id=<?= $event['id']?>">
                     <h2> <?= $event['name'] ?> </h2>
                     <div>
-                        <p>organisé par <?= $event['creator'] ?></p>
-                        <p>le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0].':'.$hour[1]?> </p>
-                        <p>participants : <?= $event['registration'] ?> / <?= $event['max_registration'] ?></p>
+                        <p>Organisé par <?= $event['creator'] ?></p>
+                        <p>Le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0].':'.$hour[1]?> </p>
+                        <p>Participants : <?= $event['registration'] ?> / <?= $event['max_registration'] ?></p>
 
                     </div>
                 </a>

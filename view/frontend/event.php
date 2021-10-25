@@ -23,23 +23,23 @@ $hourDuration = explode(':', $infoevent['duration']);
     <?php
     if(isset($_SESSION['auth'])){
         if($infoevent['idcreator'] == $_SESSION['auth']['id']){
-            echo '<a href="index.php?page=modifyevent&id='. $infoevent['id'] .'">modifier mon evenement</a>';
+            echo '<a href="index.php?page=modifyevent&id='. $infoevent['id'] .'">Modifier mon evenement</a>';
         }
     }
     ?>
     <div>
-        <p class="proposed">cet evenement est proposé par <?= $infoevent['creator']?>
-        <br> prévu pour le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0] . ':' . $hour[1]?>.</p>
+        <p class="proposed">Cet evenement est proposé par <?= $infoevent['creator']?>
+        <br>Prévu pour le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0] . ':' . $hour[1]?>.</p>
         <?php
         if($hourDuration[0] > 0){
-            echo '<p> durée prévue : '.$hourDuration[0].' heure(s) et '.$hourDuration[1].' minutes.</p>';
+            echo '<p> Durée prévue : '.$hourDuration[0].' heure(s) et '.$hourDuration[1].' minutes.</p>';
         }else{
-            echo '<p> durée prévue : '.$hourDuration[1].' minutes.</p>';
+            echo '<p> Durée prévue : '.$hourDuration[1].' minutes.</p>';
         }
         
         ?>
         <p class="descri"><?= $infoevent['description']?></p>
-        <h2 class="reserved">participants : <?= $infoevent['registration'] ?> / <?= $infoevent['max_registration'] ?></h2> 
+        <h2 class="reserved">Participants : <?= $infoevent['registration'] ?> / <?= $infoevent['max_registration'] ?></h2> 
         <ul>
             <?php
             $req = $bdd->prepare('SELECT users.pseudo as user, reserved.user as userid, reserved.friend FROM reserved INNER JOIN users ON reserved.user = users.id WHERE reserved.event= :id ');
@@ -74,7 +74,7 @@ $hourDuration = explode(':', $infoevent['duration']);
         <form method="post" action="view/backend/reserve-event.php?id=<?=$_GET['id']?>">
             <fieldset>
                 <div>
-                    <input type="checkbox" name="friend"><label for="friend"> je viens avec un pote</label>
+                    <input type="checkbox" name="friend"><label for="friend">Je viens avec un pote</label>
                 </div>
                 <input type="submit" value="je m'inscrit à cet evenement !">
                 <div></div>
@@ -85,7 +85,7 @@ $hourDuration = explode(':', $infoevent['duration']);
         }
     }
     else{
-        echo "<div class='warn'> vous devez vous connecter pour vous inscrire.</div> ";
+        echo "<div class='warn'>Vous devez vous connecter pour vous inscrire.</div> ";
     }
         
     ?>

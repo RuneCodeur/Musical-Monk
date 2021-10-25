@@ -6,7 +6,8 @@ $errorsCreate = array();
 
 //test si l'utilisateur est connecté
 if(!isset($_SESSION['auth']['id'])){
-    header('location: index.php?page=planning&err=connection');
+    session_destroy();
+    header('location: index.php?page=planning&err=connexion');
     die;
 }
 

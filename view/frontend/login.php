@@ -18,13 +18,13 @@ if(!empty($_POST)){
 ?>
 
 <div class="page login">
-    <h1>connexion</h1>
+    <h1>Connexion</h1>
 
     <?php if (!empty($errorsCreate)){
         ?>
 
         <div class="err">
-            <p>vous n'avez pas rempli le formulaire correctement :</p>
+            <p>Vous n'avez pas rempli le formulaire correctement :</p>
             <ul>
 
             <?php 
@@ -48,16 +48,16 @@ if(!empty($_POST)){
 
     <div class="ensemble-connection">
         <div class="connection-account">
-            <h2>j'ai déja un compte</h2>
+            <h2>J'ai déja un compte</h2>
             <form method="post" action="index.php?page=login">
                 <fieldset>
                     <div>
-                        <label for="pseudo">pseudo :</label>
+                        <label for="pseudo">Pseudo :</label>
                         <input type="text" name="connect-pseudo" required>
                     </div>
 
                     <div>
-                        <label for="mdp">mot de passe :</label>
+                        <label for="mdp">Mot de passe :</label>
                         <input type="password" name="connect-mdp" required>
                     </div>
 
@@ -67,26 +67,26 @@ if(!empty($_POST)){
         </div>
 
         <div class="create-account">
-            <h2> je crée un compte</h2>
+            <h2>Je crée un compte</h2>
             <form method="post" action="index.php?page=login">
                 <fieldset>
                     <div>
-                        <label for="pseudo">pseudo :</label>
+                        <label for="pseudo">Pseudo :</label>
                         <input type="text" id="pseudo" name="create-pseudo" >
                     </div>
                     
                     <div>
-                        <label for="mail">mail :</label>
+                        <label for="mail">Mail :</label>
                         <input type="email" id="mail" name="create-mail" >
                     </div>
                     
                     <div>
-                        <label for="mdp"> mot de passe :</label>
+                        <label for="mdp">Mot de passe :</label>
                         <input type="password" id="mdp" name="create-mdp" onkeyup="check()">
                     </div>
 
                     <div>
-                        <label for="confirm-mdp"> confirmation du mot de passe :</label>
+                        <label for="confirm-mdp">Confirmation du mot de passe :</label>
                         <input type="password" id="confirm-mdp" name="confirm-mdp" onkeyup="check()" >
                     </div>
                     

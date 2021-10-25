@@ -18,7 +18,7 @@ if($response['token_validation'] == $token){
         'id' => $id
     ));
     
-    require_once ('view/backend/sessionStart.php');
+    require_once ('view/backend/session-start.php');
     connect_user($response);
 
     header('location: index.php?page=account&win=validtoken');

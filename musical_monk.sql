@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3308
--- Généré le : Dim 17 oct. 2021 à 11:12
+-- Généré le : Dim 17 oct. 2021 à 17:08
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `musical_monk`
 --
-CREATE DATABASE IF NOT EXISTS `musical_monk` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `musical_monk`;
 
 -- --------------------------------------------------------
 
@@ -182,13 +180,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `product_type`
@@ -200,19 +198,19 @@ ALTER TABLE `product_type`
 -- AUTO_INCREMENT pour la table `reserved`
 --
 ALTER TABLE `reserved`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `reserved_product`
 --
 ALTER TABLE `reserved_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

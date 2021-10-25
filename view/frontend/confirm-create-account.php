@@ -4,7 +4,7 @@ ob_start();
 
 <div class="page">
     
-<div class='win'>Un email de confirmation à été envoyé dans votre boite mail.</div>
+<div class='win'>Un mail de confirmation à été envoyé dans votre boite mail.</div>
 
 </div>
     

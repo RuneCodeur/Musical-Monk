@@ -80,7 +80,17 @@ header #account a {
   align-items: center;
   text-decoration: none;
   height: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+header #account a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  position: relative;
+  top: 2px;
 }
 
 header #title {
@@ -752,42 +762,87 @@ footer .footer-block ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 90%;
 }
 
-.account h2 {
+.account .all-info {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  background-color: #f6c356;
+}
+
+.account .all-info .my-account, .account .all-info .reserved {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px;
+  width: 50%;
+}
+
+.account .all-info .my-account h2, .account .all-info .reserved h2 {
   text-align: center;
 }
 
-.account .reserved {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.account .reserved .product, .account .reserved .events {
+.account .all-info .my-account .product, .account .all-info .my-account .events, .account .all-info .reserved .product, .account .all-info .reserved .events {
   height: 100%;
   margin: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  width: 95%;
+  min-width: 330px;
 }
 
-.account .reserved .product .item-product, .account .reserved .product .item-event, .account .reserved .events .item-product, .account .reserved .events .item-event {
+.account .all-info .my-account .product h3, .account .all-info .my-account .events h3, .account .all-info .reserved .product h3, .account .all-info .reserved .events h3 {
+  margin: 0;
+}
+
+.account .all-info .my-account .product .product-title, .account .all-info .my-account .events .product-title, .account .all-info .reserved .product .product-title, .account .all-info .reserved .events .product-title {
+  width: 100%;
+  min-width: 400px;
+}
+
+.account .all-info .my-account .product .product-title .name, .account .all-info .my-account .events .product-title .name, .account .all-info .reserved .product .product-title .name, .account .all-info .reserved .events .product-title .name {
+  width: 100%;
+  padding-left: 30px;
+}
+
+.account .all-info .my-account .product .product-title .quantity, .account .all-info .my-account .events .product-title .quantity, .account .all-info .reserved .product .product-title .quantity, .account .all-info .reserved .events .product-title .quantity {
+  justify-content: center;
+  max-width: 85px;
+}
+
+.account .all-info .my-account .product .product-title .price, .account .all-info .my-account .events .product-title .price, .account .all-info .reserved .product .product-title .price, .account .all-info .reserved .events .product-title .price {
+  justify-content: center;
+  max-width: 110px;
+}
+
+.account .all-info .my-account .product .product-title .delete, .account .all-info .my-account .events .product-title .delete, .account .all-info .reserved .product .product-title .delete, .account .all-info .reserved .events .product-title .delete {
+  max-width: 30px;
+}
+
+.account .all-info .my-account .product .item-product, .account .all-info .my-account .product .item-event, .account .all-info .my-account .events .item-product, .account .all-info .my-account .events .item-event, .account .all-info .reserved .product .item-product, .account .all-info .reserved .product .item-event, .account .all-info .reserved .events .item-product, .account .all-info .reserved .events .item-event {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: 2px 0;
 }
 
-.account .reserved .product .item-product a, .account .reserved .product .item-event a, .account .reserved .events .item-product a, .account .reserved .events .item-event a {
+.account .all-info .my-account .product .item-product .my-item, .account .all-info .my-account .product .item-product .my-event, .account .all-info .my-account .product .item-event .my-item, .account .all-info .my-account .product .item-event .my-event, .account .all-info .my-account .events .item-product .my-item, .account .all-info .my-account .events .item-product .my-event, .account .all-info .my-account .events .item-event .my-item, .account .all-info .my-account .events .item-event .my-event, .account .all-info .reserved .product .item-product .my-item, .account .all-info .reserved .product .item-product .my-event, .account .all-info .reserved .product .item-event .my-item, .account .all-info .reserved .product .item-event .my-event, .account .all-info .reserved .events .item-product .my-item, .account .all-info .reserved .events .item-product .my-event, .account .all-info .reserved .events .item-event .my-item, .account .all-info .reserved .events .item-event .my-event {
   display: flex;
   flex-direction: row;
   text-decoration: none;
   border-top: 3px black solid;
   border-bottom: 3px black solid;
+  width: 90%;
+  justify-content: flex-end;
 }
 
-.account .reserved .product .item-product a div, .account .reserved .product .item-event a div, .account .reserved .events .item-product a div, .account .reserved .events .item-event a div {
+.account .all-info .my-account .product .item-product .my-item div, .account .all-info .my-account .product .item-product .my-event div, .account .all-info .my-account .product .item-event .my-item div, .account .all-info .my-account .product .item-event .my-event div, .account .all-info .my-account .events .item-product .my-item div, .account .all-info .my-account .events .item-product .my-event div, .account .all-info .my-account .events .item-event .my-item div, .account .all-info .my-account .events .item-event .my-event div, .account .all-info .reserved .product .item-product .my-item div, .account .all-info .reserved .product .item-product .my-event div, .account .all-info .reserved .product .item-event .my-item div, .account .all-info .reserved .product .item-event .my-event div, .account .all-info .reserved .events .item-product .my-item div, .account .all-info .reserved .events .item-product .my-event div, .account .all-info .reserved .events .item-event .my-item div, .account .all-info .reserved .events .item-event .my-event div {
   border-left: 3px black solid;
   padding: 0 10px;
   width: auto;
@@ -795,9 +850,36 @@ footer .footer-block ul {
   flex-direction: row;
 }
 
-.account .reserved .product .item-product .delete, .account .reserved .product .item-event .delete, .account .reserved .events .item-product .delete, .account .reserved .events .item-event .delete {
+.account .all-info .my-account .product .item-product .my-item .name, .account .all-info .my-account .product .item-product .my-event .name, .account .all-info .my-account .product .item-event .my-item .name, .account .all-info .my-account .product .item-event .my-event .name, .account .all-info .my-account .events .item-product .my-item .name, .account .all-info .my-account .events .item-product .my-event .name, .account .all-info .my-account .events .item-event .my-item .name, .account .all-info .my-account .events .item-event .my-event .name, .account .all-info .reserved .product .item-product .my-item .name, .account .all-info .reserved .product .item-product .my-event .name, .account .all-info .reserved .product .item-event .my-item .name, .account .all-info .reserved .product .item-event .my-event .name, .account .all-info .reserved .events .item-product .my-item .name, .account .all-info .reserved .events .item-product .my-event .name, .account .all-info .reserved .events .item-event .my-item .name, .account .all-info .reserved .events .item-event .my-event .name {
+  width: 100%;
+}
+
+.account .all-info .my-account .product .item-product .my-item .quantity, .account .all-info .my-account .product .item-product .my-event .quantity, .account .all-info .my-account .product .item-event .my-item .quantity, .account .all-info .my-account .product .item-event .my-event .quantity, .account .all-info .my-account .events .item-product .my-item .quantity, .account .all-info .my-account .events .item-product .my-event .quantity, .account .all-info .my-account .events .item-event .my-item .quantity, .account .all-info .my-account .events .item-event .my-event .quantity, .account .all-info .reserved .product .item-product .my-item .quantity, .account .all-info .reserved .product .item-product .my-event .quantity, .account .all-info .reserved .product .item-event .my-item .quantity, .account .all-info .reserved .product .item-event .my-event .quantity, .account .all-info .reserved .events .item-product .my-item .quantity, .account .all-info .reserved .events .item-product .my-event .quantity, .account .all-info .reserved .events .item-event .my-item .quantity, .account .all-info .reserved .events .item-event .my-event .quantity {
+  justify-content: center;
+  min-width: 50px;
+}
+
+.account .all-info .my-account .product .item-product .my-item .price, .account .all-info .my-account .product .item-product .my-event .price, .account .all-info .my-account .product .item-event .my-item .price, .account .all-info .my-account .product .item-event .my-event .price, .account .all-info .my-account .events .item-product .my-item .price, .account .all-info .my-account .events .item-product .my-event .price, .account .all-info .my-account .events .item-event .my-item .price, .account .all-info .my-account .events .item-event .my-event .price, .account .all-info .reserved .product .item-product .my-item .price, .account .all-info .reserved .product .item-product .my-event .price, .account .all-info .reserved .product .item-event .my-item .price, .account .all-info .reserved .product .item-event .my-event .price, .account .all-info .reserved .events .item-product .my-item .price, .account .all-info .reserved .events .item-product .my-event .price, .account .all-info .reserved .events .item-event .my-item .price, .account .all-info .reserved .events .item-event .my-event .price {
+  justify-content: center;
+  min-width: 90px;
+}
+
+.account .all-info .my-account .product .item-product .my-item .name-event, .account .all-info .my-account .product .item-product .my-event .name-event, .account .all-info .my-account .product .item-event .my-item .name-event, .account .all-info .my-account .product .item-event .my-event .name-event, .account .all-info .my-account .events .item-product .my-item .name-event, .account .all-info .my-account .events .item-product .my-event .name-event, .account .all-info .my-account .events .item-event .my-item .name-event, .account .all-info .my-account .events .item-event .my-event .name-event, .account .all-info .reserved .product .item-product .my-item .name-event, .account .all-info .reserved .product .item-product .my-event .name-event, .account .all-info .reserved .product .item-event .my-item .name-event, .account .all-info .reserved .product .item-event .my-event .name-event, .account .all-info .reserved .events .item-product .my-item .name-event, .account .all-info .reserved .events .item-product .my-event .name-event, .account .all-info .reserved .events .item-event .my-item .name-event, .account .all-info .reserved .events .item-event .my-event .name-event {
+  width: 100%;
+}
+
+.account .all-info .my-account .product .item-product .my-item .date, .account .all-info .my-account .product .item-product .my-event .date, .account .all-info .my-account .product .item-event .my-item .date, .account .all-info .my-account .product .item-event .my-event .date, .account .all-info .my-account .events .item-product .my-item .date, .account .all-info .my-account .events .item-product .my-event .date, .account .all-info .my-account .events .item-event .my-item .date, .account .all-info .my-account .events .item-event .my-event .date, .account .all-info .reserved .product .item-product .my-item .date, .account .all-info .reserved .product .item-product .my-event .date, .account .all-info .reserved .product .item-event .my-item .date, .account .all-info .reserved .product .item-event .my-event .date, .account .all-info .reserved .events .item-product .my-item .date, .account .all-info .reserved .events .item-product .my-event .date, .account .all-info .reserved .events .item-event .my-item .date, .account .all-info .reserved .events .item-event .my-event .date {
+  min-width: 120px;
+}
+
+.account .all-info .my-account .product .item-product .my-item .friend, .account .all-info .my-account .product .item-product .my-event .friend, .account .all-info .my-account .product .item-event .my-item .friend, .account .all-info .my-account .product .item-event .my-event .friend, .account .all-info .my-account .events .item-product .my-item .friend, .account .all-info .my-account .events .item-product .my-event .friend, .account .all-info .my-account .events .item-event .my-item .friend, .account .all-info .my-account .events .item-event .my-event .friend, .account .all-info .reserved .product .item-product .my-item .friend, .account .all-info .reserved .product .item-product .my-event .friend, .account .all-info .reserved .product .item-event .my-item .friend, .account .all-info .reserved .product .item-event .my-event .friend, .account .all-info .reserved .events .item-product .my-item .friend, .account .all-info .reserved .events .item-product .my-event .friend, .account .all-info .reserved .events .item-event .my-item .friend, .account .all-info .reserved .events .item-event .my-event .friend {
+  min-width: 90px;
+}
+
+.account .all-info .my-account .product .item-product .delete, .account .all-info .my-account .product .item-event .delete, .account .all-info .my-account .events .item-product .delete, .account .all-info .my-account .events .item-event .delete, .account .all-info .reserved .product .item-product .delete, .account .all-info .reserved .product .item-event .delete, .account .all-info .reserved .events .item-product .delete, .account .all-info .reserved .events .item-event .delete {
   border: none;
-  background-color: red;
+  text-decoration: none;
+  background-color: #f55656;
   border: 3px black solid;
   min-width: 30px;
   display: flex;
@@ -805,14 +887,59 @@ footer .footer-block ul {
   justify-content: center;
 }
 
-.account .leader-event {
+.account .all-info .my-account .product .item-product .delete:hover, .account .all-info .my-account .product .item-event .delete:hover, .account .all-info .my-account .events .item-product .delete:hover, .account .all-info .my-account .events .item-event .delete:hover, .account .all-info .reserved .product .item-product .delete:hover, .account .all-info .reserved .product .item-event .delete:hover, .account .all-info .reserved .events .item-product .delete:hover, .account .all-info .reserved .events .item-event .delete:hover {
+  background-color: #f22626;
+}
+
+.account .all-info .my-account {
+  padding: 10px 10px;
+  border-right: 2px black solid;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.account .all-info .my-account #button-modify {
+  margin-top: 10px;
+  height: 40px;
+  transition-duration: 0.7s;
+}
+
+.account .all-info .my-account #modify {
+  overflow: hidden;
+  height: 0;
+  transition-duration: 0.7s;
+}
+
+.account .all-info .my-account #modify form fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.account .leader-event a {
-  width: 75%;
+.account .all-info .my-account #modify form fieldset div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.account .all-info .my-account #modify form fieldset .submit {
+  margin-top: 10px;
+}
+
+.leader-event {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  background-color: #f3b226;
+  width: 90%;
+}
+
+.leader-event a {
+  width: 95%;
+  max-width: 700px;
   border-top: 3px black solid;
   border-bottom: 3px black solid;
   border-right: 3px black solid;
@@ -821,7 +948,32 @@ footer .footer-block ul {
   text-decoration: none;
 }
 
-.account .leader-event a div {
+.leader-event a div {
   padding: 0 10px;
   border-left: 3px black solid;
+}
+
+.leader-event a .name {
+  width: 100%;
+}
+
+.leader-event a .date {
+  text-align: center;
+  width: 250px;
+  min-width: 110px;
+}
+
+.leader-event a .users {
+  min-width: 160px;
+}
+
+@media screen and (max-width: 1000px) {
+  .account .all-info {
+    flex-direction: column;
+  }
+  .account .all-info .my-account, .account .all-info .reserved {
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+  }
 }

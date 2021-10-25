@@ -49,7 +49,7 @@ else{
             <input type="text" name="search" placeholder="Je recherche..." class="search-words">
                 <div>
                     <input type="radio" name="typesearch" value="0" id="type0" class="search-type" <?php if($typesearch == 0){ echo 'checked';} ?>>
-                    <label for="type0">toutes catégories</label>
+                    <label for="type0">Toutes catégories</label>
                 </div>
 
                 <?php
@@ -72,11 +72,11 @@ else{
     </form>
 
     <div class="result">
-        <h2>résultat de la recherche</h2>
+        <h2>Résultat de la recherche</h2>
         <div class="array">
-            <p class="produit">produit</p>
-            <p class="categorie">catégorie</p>
-            <p class="prix">prix</p>
+            <p class="produit">Produit</p>
+            <p class="categorie">Catégorie</p>
+            <p class="prix">Prix</p>
         </div>
         <ul>
 
@@ -95,7 +95,7 @@ else{
                     }
                 }
             }else{
-                echo '<div class="warn"> aucun résultat ne correspond à votre recherche. </div>';
+                echo '<div class="warn"> Aucun résultat ne correspond à votre recherche. </div>';
             }
             ?>
 

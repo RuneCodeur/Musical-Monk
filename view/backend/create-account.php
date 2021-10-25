@@ -12,8 +12,8 @@ if(empty($_POST['create-pseudo']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['cr
     $req ->execute(array(
         'pseudo' => $_POST['create-pseudo']
     ));
-    $user = $req->fetch();
-    if($user){
+    $result = $req->fetch();
+    if($result){
         $errorsCreate['pseudo'] = 'pseudo déja utilisé.';
     }
 }
@@ -26,8 +26,8 @@ if(empty($_POST['create-mail']) || !filter_var($_POST['create-mail'], FILTER_VAL
     $req ->execute(array(
         'mail' => $_POST['create-mail']
     ));
-    $mail = $req->fetch();
-    if($mail){
+    $result = $req->fetch();
+    if($result){
         $errorsCreate['mail'] = 'ce mail est déja utilisé.';
     }
 }

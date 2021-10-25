@@ -9,16 +9,27 @@ if(isset($_GET['win'])){
         echo '<div class="win"> Le produit à bien été réservé. </div>';
     }
 }
+if(isset($_GET['modified'])){
+    if($_GET['modified'] == 'pseudo'){
+        echo '<div class="win"> votre pseudo à bien été modifié. </div>';
+    }
+    elseif($_GET['modified'] == 'mail'){
+        echo '<div class="win"> votre adresse mail à bien été modifiée. </div>';
+    }
+    elseif($_GET['modified'] == 'mdp'){
+        echo '<div class="win"> votre mot de passe à bien été modifié. </div>';
+    }
+}
 if(isset($_GET['err'])){
     if($_GET['err'] == 'unauthorized'){
         echo '<div class="err"> Vous n\'êtes pas authorisé à vous rendre ici. </div>';
-    }elseif($_GET['err'] == 'disconnect'){
+    }elseif($_GET['err'] == 'connexion'){
         echo '<div class="err"> Vous avez été déconecté de votre session. </div>';
     }elseif($_GET['err'] == 'baduser'){
         echo '<div class="err"> vous n\'êtes pas celui que vous prétendez être. </div>';
     }
     else{
-        echo '<div class="err"> une erreur est survenu, veuillez réessayer plus tard. </div>';
+        echo '<div class="err"> une erreur est survenu, veuillez réessayer plus tard. Si cette erreur persiste, veuillez contacter le créateur à l\'adresse mail suivante : rackhamledev@gmail.com </div>';
     }
 }
 ?>
@@ -52,11 +63,11 @@ if(isset($_GET['err'])){
             <input type="submit" value="Rechercher" class="search-submit">
         </fieldset>
     </form>
-    <h1>tout ce qu'il faut pour mettre la musique en oeuvre</h1>
+    <h1>Tout ce qu'il faut pour mettre la musique en oeuvre</h1>
     <div class="presentation">
         <div class="type-product">
             <h2>Des instruments et des accessoires de tout genre</h2>
-            <p>un produit aléatoire...</p>
+            <p>Un produit aléatoire...</p>
 
             <?php
             $req = $bdd->prepare('SELECT id, name, price, picture FROM product WHERE quantity > 0 ORDER BY RAND() LIMIT 1');
@@ -79,11 +90,11 @@ if(isset($_GET['err'])){
             }
             ?>
 
-            <a href="index.php?search=&typesearch=0">voir tout les produits du magasin</a>
+            <a href="index.php?search=&typesearch=0">Voir tout les produits du magasin</a>
         </div>
         <div class="type-event">
             <h2>Des evenements réalisé par des membres actifs</h2>
-            <p>prochain évènement : </p>
+            <p>Prochain évènement : </p>
 
             <?php
             $req = $bdd->prepare('SELECT id, name, date FROM events WHERE date > NOW() ORDER BY date LIMIT 1');
@@ -99,14 +110,14 @@ if(isset($_GET['err'])){
          
                 <a href="index.php?page=event&id=<?= $event['id']?>" class="exemple">
                     <p><?=$event['name']?></p>
-                    <p>le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> </br> à <?= $hour[0].':'.$hour[1]?> </p>
+                    <p>Le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> </br> à <?= $hour[0].':'.$hour[1]?> </p>
                 </a>
 
                 <?php
             }
             ?>
             
-            <a href="index.php?page=planning">voir tout les évènements</a>
+            <a href="index.php?page=planning">Voir tout les évènements</a>
         </div>
     </div>
 </div>

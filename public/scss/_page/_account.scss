@@ -3,56 +3,158 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    h2{
-        text-align: center;
-    }
-    .reserved{
+    width: 90%;
+    .all-info{
+        width: 90%;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        .product, .events{
-            height: 100%;
-            margin: 0 20px;
+        background-color: $colorQuatuary;
+        .my-account, .reserved{
             display: flex;
-            align-items: center;
-            justify-content: center;
             flex-direction: column;
-            .item-product, .item-event{
+            justify-content: space-around;
+            align-items: center;
+            margin: 10px 10px;
+            width: 50%;
+            h2{
+                text-align: center;
+            }
+            .product, .events{
+                height: 100%;
+                margin: 0 20px;
                 display: flex;
-                flex-direction: row;
-                a{
-                    display: flex;
-                    flex-direction: row;
-                    text-decoration: none;
-                    border-top: 3px black solid;
-                    border-bottom: 3px black solid;
-                    div{
-                        border-left: 3px black solid;
-                        padding: 0 10px;
-                        width: auto;
-                        display: flex;
-                        flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: column;
+                width: 95%;
+                min-width: 330px;
+                h3{
+                    margin: 0;
+                }
+                .product-title{
+                    width: 100%;
+                    min-width: 400px;
+                    .name{
+                        width: 100%;
+                        padding-left: 30px;
+                    }
+                    .quantity{
+                        justify-content: center;
+                        max-width: 85px;
+                    }
+                    .price{
+                        justify-content: center; 
+                        max-width: 110px;
+                    }
+                    .delete{
+                        max-width: 30px;
                     }
                 }
-                .delete{
-                    border: none;
-                    background-color: red;
-                    border: 3px black solid;
-                    min-width: 30px;
+                .item-product, .item-event{
                     display: flex;
-                    align-items: center;
+                    flex-direction: row;
                     justify-content: center;
+                    width: 100%;
+                    margin: 2px 0;
+                    .my-item, .my-event{
+                        display: flex;
+                        flex-direction: row;
+                        text-decoration: none;
+                        border-top: 3px black solid;
+                        border-bottom: 3px black solid;
+                        width: 90%;
+                        justify-content: flex-end;
+                        div{
+                            border-left: 3px black solid;
+                            padding: 0 10px;
+                            width: auto;
+                            display: flex;
+                            flex-direction: row;
+                        }
+                        .name{
+                            width: 100%;
+                        }
+                        .quantity{
+                            justify-content: center;
+                            min-width: 50px;
+                        }
+                        .price{
+                            justify-content: center; 
+                            min-width: 90px;
+                        }
+                        .name-event{
+                            width: 100%;
+                        }
+                        .date{
+                            min-width: 120px;
+                        }
+                        .friend{
+                            min-width: 90px;
+                        }
+                    }
+                    .delete{
+                        border: none;
+                        text-decoration: none;
+                        background-color: $colorWarning;
+                        border: 3px black solid;
+                        min-width: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .delete:hover{
+                        background-color: darken($color: $colorWarning, $amount: 10);
+                    }
                 }
             }
         }
+        .my-account{
+            padding: 10px 10px;
+            border-right: 2px black solid;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            #button-modify{
+                margin-top: 10px;
+                height: 40px;
+                transition-duration: 0.7s;
+            }
+            #modify{
+                overflow: hidden;
+                height: 0;
+                transition-duration: 0.7s;
+                form{
+                    fieldset{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        div{
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-between;
+                            margin: 5px;
+                        }
+                        .submit{
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
     }
-    .leader-event{
+}
+
+.leader-event{
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 20px;
+        background-color: darken($color: $colorQuatuary, $amount: 10);
+        width: 90%;
         a{
-            width: 75%;
+            width: 95%;
+            max-width: 700px;
             border-top: 3px black solid;
             border-bottom: 3px black solid;
             border-right: 3px black solid;
@@ -63,6 +165,27 @@
                 padding: 0 10px;
                 border-left: 3px black solid;
             }
+            .name{
+                width: 100%;
+            }
+            .date{
+                text-align: center;
+                width: 250px;
+                min-width: 110px;
+            }
+            .users{
+                min-width: 160px;
+            }
+        }
+}
+
+@media screen and (max-width: 1000px){
+    .account .all-info{
+        flex-direction: column;
+        .my-account, .reserved{
+            width: 100%;
+            margin: 10px 0;
+            border: none;
         }
     }
 }

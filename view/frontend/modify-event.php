@@ -18,16 +18,10 @@ if(isset($_GET['id'])){
     die;
 }
 
-if(empty($event)){
+if(empty($event) || $event['creator'] != $_SESSION['auth']['id']){
     session_unset();
     session_destroy();
-    header('location: index.php?page=planning&err=baduser');
-    die;
-}
-elseif($event['creator'] != $_SESSION['auth']['id']){
-    session_unset();
-    session_destroy();
-    header('location: index.php?page=planning&err=baduser');
+    header('location: index.php?err=baduser');
     die;
 }
 
@@ -35,13 +29,13 @@ $date = explode(' ', $event['date']);
 ?>
 
 <div class="page addevent">
-    <h1>modifier mon évènement</h1>
+    <h1>Modifier mon évènement</h1>
 
     <?php if (!empty($errorsCreate)){
         ?>
 
         <div class="err">
-            <p>vous n'avez pas rempli le formulaire correctement :</p>
+            <p>Vous n'avez pas rempli le formulaire correctement :</p>
             <ul>
 
             <?php 
@@ -59,27 +53,27 @@ $date = explode(' ', $event['date']);
     <form method="post" action="index.php?page=modifyevent&id=<?=$event['id']?>">
         <fieldset>
             <div class="thinInput">
-                <label for="name"> nom  :</label>
+                <label for="name"> Nom  :</label>
                 <input type="text" id="name" name="name" placeholder="mon évènement" required value="<?=$event['name']?>">
             </div>
 
             <div class="thinInput">
-                <label for="time"> heure :</label>
+                <label for="time"> Heure :</label>
                 <input type="time" id="time" name="time" required value="<?=$date[1]?>">
             </div>
 
             <div class="thinInput">
-                <label for="date"> date :</label>
+                <label for="date"> Date :</label>
                 <input type="date" id="date" name="date" required value="<?=$date[0]?>">
             </div>
 
             <div class="thinInput">
-                <label for="duration"> durée :</br> (min 15 minutes et max 5 heures)</label>
+                <label for="duration"> Durée :</br> (min 15 minutes et max 5 heures)</label>
                 <input type="time" max="15:00" min="00:00" id="duration" name="duration" required value="<?=$event['duration']?>">
             </div>
 
             <div class="largeInput">
-                <label for="description"> description de l'évènement :</label>
+                <label for="description"> Description de l'évènement :</label>
                 <textarea id="description" name="description" row="2" col="5" placeholder="ma description" required ><?=$event['description']?></textarea>
             </div>
 
