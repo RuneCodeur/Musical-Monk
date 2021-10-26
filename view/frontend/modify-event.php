@@ -77,7 +77,7 @@ $date = explode(' ', $event['date']);
                 <textarea id="description" name="description" row="2" col="5" placeholder="ma description" required ><?=$event['description']?></textarea>
             </div>
 
-            <input class="submit" type="submit" value="modifier mon évènement">
+            <input class="submit button-style" type="submit" value="modifier mon évènement">
         </fieldset>
     </form>
 </div>

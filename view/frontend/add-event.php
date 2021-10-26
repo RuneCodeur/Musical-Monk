@@ -61,7 +61,7 @@ if(!empty($_POST)){
                 <textarea id="description" name="description" row="2" col="5" placeholder="ma description" required></textarea>
             </div>
 
-            <input class="submit" type="submit" value="créer mon évènement">
+            <input class="submit inmut-style" type="submit" value="créer mon évènement">
         </fieldset>
     </form>
 

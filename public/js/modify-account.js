@@ -5,5 +5,5 @@ input.onclick = showForm;
 function showForm(){
     input.style.height = "0";
     input.style.opacity = "0";
-    form.style.height = "350px";
+    form.style.height = "110%";
 }

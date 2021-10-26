@@ -60,7 +60,7 @@ if(isset($_GET['err'])){
                 ?>
 
             </div>
-            <input type="submit" value="Rechercher" class="search-submit">
+            <input type="submit" value="Rechercher" class="search-submit input-style">
         </fieldset>
     </form>
     <h1>Tout ce qu'il faut pour mettre la musique en oeuvre</h1>

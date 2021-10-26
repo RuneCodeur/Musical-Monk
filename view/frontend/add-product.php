@@ -94,7 +94,7 @@ if (!empty($errorsCreate)){
                 <textarea name="description"></textarea>
             </div>
         </fieldset>
-            <input type="submit" value="enregistrer le produit">
+            <input type="submit" value="enregistrer le produit" class="input-style">
     </form>
 </div>
 

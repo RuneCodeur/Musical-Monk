@@ -61,7 +61,7 @@ $product = $req->fetch();
                         <label for="quantity"> Quantité que je reserve : </label>
                         <input type="number" name="quantity" id="quantity" value="1">
                     </div>
-                    <input type="submit" id="submit" value="je reserve ce produit">
+                    <input type="submit" id="submit" value="je reserve ce produit" class="button-style">
                 </fieldset>
             </form>
             

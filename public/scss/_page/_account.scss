@@ -109,25 +109,41 @@
             }
         }
         .my-account{
-            padding: 10px 10px;
             border-right: 2px black solid;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+            margin: 0;
+            width: 100%;
+            div{
+                margin: 0 10px;
+            }
             #button-modify{
-                margin-top: 10px;
+                margin: 10px;
                 height: 40px;
-                transition-duration: 0.7s;
+                transition-duration: 1s;
             }
             #modify{
                 overflow: hidden;
                 height: 0;
-                transition-duration: 0.7s;
+                transition-duration: 1s;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
                 form{
+                    width: 100%;
                     fieldset{
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        justify-content: center;
+                        border: 3px darken($color: $colorQuatuary, $amount: 20) solid;
+                        margin: 5px;
+                        padding: 10px;
                         div{
                             width: 100%;
                             display: flex;
@@ -135,7 +151,7 @@
                             margin: 5px;
                         }
                         .submit{
-                            margin-top: 10px;
+                            margin: 15px;
                         }
                     }
                 }
@@ -185,6 +201,7 @@
         .my-account, .reserved{
             width: 100%;
             margin: 10px 0;
+            padding: 0;
             border: none;
         }
     }

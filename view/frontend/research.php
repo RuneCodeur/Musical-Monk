@@ -67,7 +67,7 @@ else{
                 ?>
 
             </div>
-            <input type="submit" value="Rechercher" class="search-submit">
+            <input type="submit" value="Rechercher" class="search-submit input-style">
         </fieldset>
     </form>
 

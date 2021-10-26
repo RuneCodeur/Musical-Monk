@@ -57,9 +57,9 @@ if(isset($_GET['win'])){
 
     <div class="all-info">
         <div class="my-account">
-            <div>Mon pseudo :<?=$_SESSION['auth']['pseudo']?></div>
-            <div>Mon mail :<?=$_SESSION['auth']['mail']?></div>
-            <input type="button" value="modifier mes informations" id="button-modify">
+            <div>Mon pseudo : <?=$_SESSION['auth']['pseudo']?></div>
+            <div>Mon mail : <?=$_SESSION['auth']['mail']?></div>
+            <input type="button" value="modifier mes informations" id="button-modify" class="input-style">
             <div id="modify">
                 <form method="post" action="index.php?page=account&modify=pseudo">
                     <fieldset>
@@ -68,7 +68,7 @@ if(isset($_GET['win'])){
                             <input type="text" id="modify-pseudo" name="modify-pseudo" >
                         </div>
 
-                        <input class="submit" type="submit" value="Modifier mon pseudo" >
+                        <input class="submit input-style" type="submit" value="Modifier mon pseudo" >
 
                     </fieldset>
                 </form>
@@ -79,7 +79,7 @@ if(isset($_GET['win'])){
                             <input type="mail" id="modify-mail" name="modify-mail" >
                         </div>
 
-                        <input class="submit" type="submit" value="Modifier mon adresse mail" >
+                        <input class="submit input-style" type="submit" value="Modifier mon adresse mail" >
 
                     </fieldset>
                 </form>
@@ -95,7 +95,7 @@ if(isset($_GET['win'])){
                             <input type="password" id="confirm-modify-mdp" name="confirm-modify-mdp" onkeyup="check()" >
                         </div>
 
-                        <input class="submit" type="submit" value="Modifier mon mot de passe" >
+                        <input class="submit input-style" type="submit" value="Modifier mon mot de passe" >
 
                     </fieldset>
                 </form>

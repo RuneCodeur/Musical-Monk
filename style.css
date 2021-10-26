@@ -47,6 +47,7 @@ h1 {
 .err {
   background-color: #f55656;
   padding: 0 20px;
+  margin: 15px 0;
   font-weight: bolder;
 }
 
@@ -272,9 +273,27 @@ footer .footer-block ul {
 }
 
 .research-item fieldset .search-submit {
-  height: 35px;
-  width: 100px;
+  height: 40px;
   margin: 0 20px;
+}
+
+.input-style {
+  border: none;
+  border-radius: 50px;
+  padding: 7px 20px;
+  background-color: #47862e;
+  color: white;
+  box-shadow: 5px 5px 5px black;
+  transition-duration: 0.3s;
+  text-align: center;
+}
+
+.input-style:hover {
+  transform: scale(1.06);
+}
+
+.input-style:active {
+  box-shadow: 5px 5px 5px black inset;
 }
 
 .contact h2 {
@@ -478,7 +497,6 @@ footer .footer-block ul {
 
 .event form fieldset {
   padding: 20px;
-  background-color: #baead3;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -892,29 +910,49 @@ footer .footer-block ul {
 }
 
 .account .all-info .my-account {
-  padding: 10px 10px;
   border-right: 2px black solid;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin: 0;
+  width: 100%;
+}
+
+.account .all-info .my-account div {
+  margin: 0 10px;
 }
 
 .account .all-info .my-account #button-modify {
-  margin-top: 10px;
+  margin: 10px;
   height: 40px;
-  transition-duration: 0.7s;
+  transition-duration: 1s;
 }
 
 .account .all-info .my-account #modify {
   overflow: hidden;
   height: 0;
-  transition-duration: 0.7s;
+  transition-duration: 1s;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.account .all-info .my-account #modify form {
+  width: 100%;
 }
 
 .account .all-info .my-account #modify form fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border: 3px #da980c solid;
+  margin: 5px;
+  padding: 10px;
 }
 
 .account .all-info .my-account #modify form fieldset div {
@@ -925,7 +963,7 @@ footer .footer-block ul {
 }
 
 .account .all-info .my-account #modify form fieldset .submit {
-  margin-top: 10px;
+  margin: 15px;
 }
 
 .leader-event {
@@ -974,6 +1012,7 @@ footer .footer-block ul {
   .account .all-info .my-account, .account .all-info .reserved {
     width: 100%;
     margin: 10px 0;
+    padding: 0;
     border: none;
   }
 }

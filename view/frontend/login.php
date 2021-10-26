@@ -61,7 +61,7 @@ if(!empty($_POST)){
                         <input type="password" name="connect-mdp" required>
                     </div>
 
-                    <input class="submit" type="submit" value="connexion" >
+                    <input class="submit input-style" type="submit" value="connexion" >
                 </fieldset>
             </form>
         </div>
@@ -90,7 +90,7 @@ if(!empty($_POST)){
                         <input type="password" id="confirm-mdp" name="confirm-mdp" onkeyup="check()" >
                     </div>
                     
-                    <input id="input-create-account" class="submit" type="submit" value=" je crée mon compte">
+                    <input id="input-create-account" class="submit input-style" type="submit" value=" je crée mon compte">
                 </fieldset>
             </form>
         </div>

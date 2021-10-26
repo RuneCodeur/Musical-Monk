@@ -76,7 +76,7 @@ $hourDuration = explode(':', $infoevent['duration']);
                 <div>
                     <input type="checkbox" name="friend"><label for="friend">Je viens avec un pote</label>
                 </div>
-                <input type="submit" value="je m'inscrit à cet evenement !">
+                <input type="submit" value="je m'inscrit à cet evenement !" class="input-style">
                 <div></div>
             </fieldset>
         </form>
