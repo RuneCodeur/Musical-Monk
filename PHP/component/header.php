@@ -10,7 +10,7 @@
             $connection = $_SESSION['auth']['pseudo'];
             {
             ?>
-            <a href="view/backend/session-destroy.php">deconnexion <i class="fas fa-sign-out-alt"></i></a>
+            <a href="view/backend/session-destroy.php">déconnexion <i class="fas fa-sign-out-alt"></i></a>
 
             <a href="index.php?page=account">mon compte</a>
             <?php

@@ -1,4 +1,10 @@
 
+*{
+    font-family: 'bakersignet';
+	color: black;
+    font-size: 20px;
+}
+
 html, body{
     width: 100%;
     margin: 0;
@@ -21,7 +27,10 @@ h1{
     font-size: 30px;
     text-decoration: underline;
     text-align: center;
+    font-family: 'capture-it';
+    font-weight: normal;
 }
+
 .win{
     background-color: $colorSecondary;
     padding: 20px;
@@ -29,7 +38,7 @@ h1{
 }
 
 .err{
-    background-color: rgb(245, 86, 86);
+    background-color: $colorWarning;
     padding: 0 20px;
     margin: 15px 0;
     font-weight: bolder;

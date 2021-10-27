@@ -1,8 +1,9 @@
 $colorPrimary: rgb(132, 203, 104);
-$colorSecondary: rgb( 186, 234, 211);
-$colorTertiary: rgb(33, 117, 151);
+$colorSecondary: rgb( 182, 255, 152);
+$colorTertiary: rgb(83, 154, 58);
 $colorQuatuary: rgb( 246, 195, 86);
 $colorWarning: rgb(245, 86, 86);
+
 @font-face {
 	font-family: 'bakersignet';
 	src : url('./public/typo/BakerSignetBT.ttf') format('ttf');
@@ -11,8 +12,19 @@ $colorWarning: rgb(245, 86, 86);
 	src : url('./public/typo/BakerSignetBT.woff') format('woff');
 		
 }
-*{
-    font-family: 'bakersignet';
-	color: black;
-    font-size: 20px;
+@font-face {
+	font-family: 'another-typewriter';
+	src : url('./public/typo/Another-typewriter.ttf') format('ttf');
+	src : url('./public/typo/Another-typewriter.eot') format('eot');
+	src : url('./public/typo/Another-typewriter.svg') format('svf');
+	src : url('./public/typo/Another-typewriter.woff') format('woff');
+		
+}
+@font-face {
+	font-family: 'capture-it';
+	src : url('./public/typo/Capture-it.ttf') format('ttf');
+	src : url('./public/typo/Capture-it.eot') format('eot');
+	src : url('./public/typo/Capture-it.svg') format('svf');
+	src : url('./public/typo/Capture-it.woff') format('woff');
+		
 }

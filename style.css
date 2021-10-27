@@ -6,6 +6,22 @@
   src: url("./public/typo/BakerSignetBT.woff") format("woff");
 }
 
+@font-face {
+  font-family: 'another-typewriter';
+  src: url("./public/typo/Another-typewriter.ttf") format("ttf");
+  src: url("./public/typo/Another-typewriter.eot") format("eot");
+  src: url("./public/typo/Another-typewriter.svg") format("svf");
+  src: url("./public/typo/Another-typewriter.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'capture-it';
+  src: url("./public/typo/Capture-it.ttf") format("ttf");
+  src: url("./public/typo/Capture-it.eot") format("eot");
+  src: url("./public/typo/Capture-it.svg") format("svf");
+  src: url("./public/typo/Capture-it.woff") format("woff");
+}
+
 * {
   font-family: 'bakersignet';
   color: black;
@@ -36,10 +52,12 @@ h1 {
   font-size: 30px;
   text-decoration: underline;
   text-align: center;
+  font-family: 'capture-it';
+  font-weight: normal;
 }
 
 .win {
-  background-color: #baead3;
+  background-color: #b6ff98;
   padding: 20px;
   font-weight: bolder;
 }
@@ -73,7 +91,7 @@ header #account {
   align-items: center;
   display: flex;
   flex-direction: row-reverse;
-  background-color: #baead3;
+  background-color: #b6ff98;
 }
 
 header #account a {
@@ -176,16 +194,18 @@ header #navigation nav a {
     width: 100%;
     border: none;
     position: relative;
-    background-color: #61b73f;
+    background-color: #539a3a;
     border-radius: 0 0 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   header #navigation span i {
+    color: white;
     margin: 0 10px;
   }
   header #navigation span p {
+    color: white;
     margin: 5px 0;
     text-align: center;
     font-size: 30px;
@@ -281,7 +301,7 @@ footer .footer-block ul {
   border: none;
   border-radius: 50px;
   padding: 7px 20px;
-  background-color: #47862e;
+  background-color: #539a3a;
   color: white;
   box-shadow: 5px 5px 5px black;
   transition-duration: 0.3s;
@@ -393,11 +413,6 @@ footer .footer-block ul {
   flex-direction: column;
 }
 
-.login h1 {
-  width: 100%;
-  text-align: center;
-}
-
 .login .ensemble-connection {
   display: flex;
   flex-direction: row;
@@ -407,7 +422,7 @@ footer .footer-block ul {
 }
 
 .login .ensemble-connection .connection-account, .login .ensemble-connection .create-account {
-  background-color: #baead3;
+  background-color: #b6ff98;
   max-width: 45%;
   margin: 10px;
   min-width: 350px;
@@ -575,7 +590,7 @@ footer .footer-block ul {
 }
 
 .home .presentation .type-product {
-  background-color: rgba(186, 234, 211, 0.8);
+  background-color: rgba(182, 255, 152, 0.8);
   margin: 10px;
   padding: 10px;
   display: flex;
@@ -606,7 +621,7 @@ footer .footer-block ul {
 }
 
 .home .presentation .type-event {
-  background-color: rgba(186, 234, 211, 0.8);
+  background-color: rgba(182, 255, 152, 0.8);
   background-size: cover;
   background-position: center;
   margin: 10px;

@@ -35,6 +35,9 @@ if(isset($_GET['err'])){
 ?>
 
 <div class="page home">
+
+    <h1>Tout ce qu'il faut pour mettre la musique en oeuvre</h1>
+
     <form action="index.php" method="get" class="research-item">
         <fieldset>
             <div class="param-search">
@@ -63,7 +66,6 @@ if(isset($_GET['err'])){
             <input type="submit" value="Rechercher" class="search-submit input-style">
         </fieldset>
     </form>
-    <h1>Tout ce qu'il faut pour mettre la musique en oeuvre</h1>
     <div class="presentation">
         <div class="type-product">
             <h2>Des instruments et des accessoires de tout genre</h2>
@@ -93,7 +95,7 @@ if(isset($_GET['err'])){
             <a href="index.php?search=&typesearch=0">Voir tout les produits du magasin</a>
         </div>
         <div class="type-event">
-            <h2>Des evenements réalisé par des membres actifs</h2>
+            <h2>Des évènements réalisé par des membres actifs</h2>
             <p>Prochain évènement : </p>
 
             <?php

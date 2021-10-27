@@ -23,12 +23,12 @@ $hourDuration = explode(':', $infoevent['duration']);
     <?php
     if(isset($_SESSION['auth'])){
         if($infoevent['idcreator'] == $_SESSION['auth']['id']){
-            echo '<a href="index.php?page=modifyevent&id='. $infoevent['id'] .'">Modifier mon evenement</a>';
+            echo '<a href="index.php?page=modifyevent&id='. $infoevent['id'] .'">Modifier mon évènement</a>';
         }
     }
     ?>
     <div>
-        <p class="proposed">Cet evenement est proposé par <?= $infoevent['creator']?>
+        <p class="proposed">Cet évènement est proposé par <?= $infoevent['creator']?>
         <br>Prévu pour le <?= $day[2]?>/<?= $day[1]?>/<?= $day[0]?> à <?= $hour[0] . ':' . $hour[1]?>.</p>
         <?php
         if($hourDuration[0] > 0){
@@ -76,7 +76,7 @@ $hourDuration = explode(':', $infoevent['duration']);
                 <div>
                     <input type="checkbox" name="friend"><label for="friend">Je viens avec un pote</label>
                 </div>
-                <input type="submit" value="je m'inscrit à cet evenement !" class="input-style">
+                <input type="submit" value="je m'inscrit à cet évènement !" class="input-style">
                 <div></div>
             </fieldset>
         </form>

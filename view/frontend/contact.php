@@ -12,7 +12,7 @@ ob_start();
 
     <div>
         <h2>L'histoire de l'entreprise</h2>
-        <p>Jeune globetrotteur, Tyller DURDEN décida de crée Musical Monk en 2016 est mis à profit les nombreuses relations qu'il à pus créer durant ses voyages. La petite boutique établi aux abord de Toulouse rencontra un succès meritant dans la vente d'instrurment de musique importé, mais la monotonie se fait vite ressentir dans le magasin. Tyller DURDEN choisi donc de casser le quotidien du quartier en créant des petits evenements metant en avant les musiciens en herbes et occasionels. Au fil du temps, divers types d'evenements dans le theme du magasin vis le jour dans la tête de Tyler ainsi que dans celles de ses collaborateurs.</p>
+        <p>Jeune globetrotteur, Tyller DURDEN décida de crée Musical Monk en 2016 est mis à profit les nombreuses relations qu'il à pus créer durant ses voyages. La petite boutique établi aux abord de Toulouse rencontra un succès meritant dans la vente d'instrurment de musique importé, mais la monotonie se fait vite ressentir dans le magasin. Tyller DURDEN choisi donc de casser le quotidien du quartier en créant des petits évènements metant en avant les musiciens en herbes et occasionels. Au fil du temps, divers types d'évènements dans le theme du magasin vis le jour dans la tête de Tyler ainsi que dans celles de ses collaborateurs.</p>
     </div>
 
     <div class="info">

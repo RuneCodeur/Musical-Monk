@@ -106,15 +106,17 @@ header{
                 width: 100%;
                 border: none;
                 position: relative;
-                background-color: darken($color: $colorPrimary, $amount: 12);
+                background-color: $colorTertiary;
                 border-radius: 0 0 10px 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 i{
+                    color: white;
                     margin: 0 10px;
                 }
                 p{
+                    color: white;
                     margin: 5px 0;
                     text-align: center;
                     font-size: 30px;

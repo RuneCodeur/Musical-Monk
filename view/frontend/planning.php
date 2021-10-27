@@ -12,7 +12,7 @@ if(isset($_GET['win'])){
 }
 if(isset($_GET['err'])){
     if($_GET['err'] == 'badevent'){
-        echo '<div class="err"> Cet evenement n\'existe plus. </div>';
+        echo '<div class="err"> Cet évènement n\'existe plus. </div>';
     }elseif($_GET['err'] == 'registred'){
         echo '<div class="err"> vous êtes déjà enregistré pour cet évènement. </div>';
     }elseif($_GET['err'] == 'noplace'){

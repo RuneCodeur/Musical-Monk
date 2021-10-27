@@ -2,7 +2,7 @@
     border: none;
     border-radius: 50px;
     padding: 7px 20px;
-    background-color: darken($color: $colorPrimary, $amount: 25);
+    background-color: $colorTertiary;
     color: white;
     box-shadow: 5px 5px 5px black;
     transition-duration: 0.3s;
