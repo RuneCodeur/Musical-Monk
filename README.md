@@ -1,8 +1,10 @@
 projet : Musical-Monk
 
-le site fonctionne avec MySQL et PHP et nécéssite un procédé d'instalation et de lancement :
+le site fonctionne avec MySQL et PHP et est accessible à l'adresse suivante.
+https://musical-monk.alwaysdata.net
+
 -----------------
-installation
+installation en local
 ------------------
 telecharger et installez MAMP: https://www.mamp.info/fr/downloads/
 
