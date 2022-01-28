@@ -1,8 +1,10 @@
 projet : Musical-Monk
 
-le site fonctionne avec MySQL et PHP et nécéssite un procédé d'instalation et de lancement :
+le site fonctionne avec MySQL et PHP et est accessible à l'adresse suivante.
+https://musical-monk.alwaysdata.net
+
 -----------------
-installation
+installation en local
 ------------------
 telecharger et installez MAMP: https://www.mamp.info/fr/downloads/
 
@@ -34,5 +36,5 @@ la page "creer un compte / connexion" permet de se connecter ou de creer un nouv
 seuls les utilisateurs ADMIN connectés peuvent avoir accès à la page "ajouter un produit" qui sert à rajouter de nouveaux produits à reservé.
 
 tout les utilisateurs connectés peuvent avoir accès à la page "mon compte" qui permet d'avoir un resumé de son compte et des produits reservés.
-si il le souhaite, l'utilisateur pourra voir les details du/des produits/évènements qu'il à reservés en cliquant dessus.
-si il le souhaite, l'utilisateur pourra supprimer ses reservations. le nombre de places des évènements et la quantités des produits disponnibles seront remis à jour à la suppression des reservations.
+si il le souhaite, l'utilisateur pourra voir les details du/des produits/évènements qu'il à reservés.
+si il le souhaite, l'utilisateur pourra supprimer ses reservations. le nombre de places des évènements et la quantités des produits disponnibles seront mis à jour à la suppression des reservations.
