@@ -5,13 +5,14 @@
         width: 100%;
         img{
             width: 65%;
+            max-height: 750px;
             object-fit: contain ;
         }
         .carac-product{
             display: flex;
             flex-direction: column;
             margin: 0 15px;
-            width: 30%;
+            min-width: 30%;
             .price{
                 text-align: end;
             }

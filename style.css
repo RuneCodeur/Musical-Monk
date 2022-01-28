@@ -742,6 +742,7 @@ footer .footer-block ul {
 
 .product div img {
   width: 65%;
+  max-height: 750px;
   object-fit: contain;
 }
 
@@ -749,7 +750,7 @@ footer .footer-block ul {
   display: flex;
   flex-direction: column;
   margin: 0 15px;
-  width: 30%;
+  min-width: 30%;
 }
 
 .product div .carac-product .price {
