@@ -3,6 +3,7 @@
 $title = 'Musical-Monk';
 
 include_once('model/product.php');
+include_once('model/reservation-product.php');
 
 try{
     try{
@@ -11,7 +12,7 @@ try{
             die();
         }
         elseif(isset($_POST['quantity'])){
-            $reservation = new Product();
+            $reservation = new ReservationProduct();
             $reservation = $reservation -> Reservation($_SESSION['auth']['id'], $_GET['id'], $_POST['quantity']);
             if($reservation === true){
                 echo '<div class="win"> votre reservation à bien été effectuée! </div>';

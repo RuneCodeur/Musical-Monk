@@ -28,8 +28,8 @@
 
             <?php
             $iHaveReserved = 0;
-            if($reservation != null){
-                foreach ($reservation as $reserved){
+            if($listReservation != null){
+                foreach ($listReservation as $reserved){
                     if(isset($_SESSION['auth'])){
                         if($reserved['userid'] == $_SESSION['auth']['id']){
                             $iHaveReserved = 1;

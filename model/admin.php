@@ -1,14 +1,17 @@
 <?php
 include_once('model/connectDB.php');
+include_once('model/test.php');
+include_once('model/interfaces.php');
 
-final class Admin extends ConnectDB {
+final class Admin extends ConnectDB implements AdminInterface {
+    use TestAware;
 
-    public function CreateProduct (array $product, array $picture) : bool{
+    public function CreateProduct (array $product, array $picture): bool{
         $testTitle = $this->TestTitle($product['title']);
         $testDescription = $this->TestDescription($product['description']);
         $testType = $this->TestType($product['type']);
         $testPrice = $this->TestPrice($product['price']);
-        $testQuantity = $this->TestQuantity($product['quantity']);
+        $testQuantity = $this->TestPostiveNumber($product['quantity']);
         $TestPicture = $this->TestPicture($picture);
         if($testTitle != true){
             throw new Exception("Le titre possède un ou plusieurs caractères interdits ( | * # @ [] <> {} € \$ ¤ £ § ).");
@@ -70,69 +73,4 @@ final class Admin extends ConnectDB {
         return $nameFile;
     }
     
-    private function TestTitle(string $title): bool {
-        if(empty($title)){
-            throw new Exception("Le produit ne possède pas de titre.");
-        }
-        elseif(!preg_match('/^[^|*#@<>\[\]{}€$£¤§\t\n\r]+$/', $title)){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    private function TestDescription(string $description): bool {
-        if(empty($description)){
-            throw new Exception("Le produit ne possède pas de description.");
-        }
-        elseif(!preg_match('/^[^|<>\[\]{}]+$/', $description)){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    private function TestType(int $type): bool {
-        $bdd = parent::Connection();
-        $req = $bdd->prepare('SELECT id FROM product_type WHERE id =:id');
-        $req ->execute(array('id' => $type));
-        $response = $req-> fetch();
-        if($response === false){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-    private function TestPrice(float $price): bool {
-        if($price < 0){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    private function TestQuantity(int $quantity): bool {
-        if($quantity < 0){
-            return false;
-        }
-        else{
-            return true;
-        }
-    }
-
-    private function TestPicture(array $picture): bool {
-        if(empty($picture['picture']['size'])){
-            return false;
-        }
-        elseif(!$picture['picture']['type'] == 'image/png' || !$picture['picture']['type'] == 'image/jpg' || !$picture['picture']['type'] == 'image/jpeg'){
-            throw new Exception("votre photo n'est pas au bon format(JPG, JPEG, PNG).");
-        }
-        else{
-            return true;
-        }
-    }
 }

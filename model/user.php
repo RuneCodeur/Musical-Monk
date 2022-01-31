@@ -4,7 +4,7 @@ include_once('model/calcul.php');
 include_once('model/mail.php');
 
 
-final class User extends ConnectDB {
+final class User extends ConnectDB implements UserInterface {
 
     public function CreateUser(string $pseudo, string $mail, string $password, string $confirmPassword) {
         $testPseudo = $this->TestPseudo($pseudo);
@@ -58,6 +58,56 @@ final class User extends ConnectDB {
             return true;
         }
     }
+
+    public function TestAdmin(int $user): bool {
+        $bdd = parent::Connection();
+        $req = $bdd->prepare('SELECT admin FROM users WHERE id = :id');
+        $req->execute(array('id' => $user));
+        $admin = $req->fetch();
+        if(!$admin){
+            print_r($admin);
+            return false;
+        }
+        else{
+            if($admin['admin'] == 1 ){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+
+    public function ModifyUser(int $user, array $item): bool{
+        $value = reset($item);
+        if($value == ''){
+            throw new Exception("Vous ne pouvez pas modifier votre compte avec rien du tout.");
+        }else{
+            switch(array_key_first($item)){
+                case 'modify-pseudo':
+                    $response = $this->ModifyPseudo($user, $item);
+                    if($response){
+                        $_SESSION['auth']['pseudo'] = $item['modify-pseudo'];
+                    }
+                break;
+
+                case 'modify-mail':
+                    $response = $this->ModifyMail($user, $item);
+                    if($response){
+                        $_SESSION['auth']['mail'] = $item['modify-mail'];
+                    }
+                break;
+
+                case 'modify-mdp':
+                    $response = $this->ModifyPassword($user, $item);
+                    if($response){
+                        $_SESSION['auth']['mdp'] = $item['modify-mdp'];
+                    }
+                break;
+            }
+            return $response;
+        }
+    }
     
     private function TestPseudo(string $pseudo): bool {
         if(!preg_match('/^[a-zA-Z0-9_]+$/', $pseudo)){
@@ -105,37 +155,6 @@ final class User extends ConnectDB {
         }
     }
 
-    public function ModifyUser(int $user, array $item): bool{
-        $value = reset($item);
-        if($value == ''){
-            throw new Exception("Vous ne pouvez pas modifier votre compte avec rien du tout.");
-        }else{
-            switch(array_key_first($item)){
-                case 'modify-pseudo':
-                    $response = $this->ModifyPseudo($user, $item);
-                    if($response){
-                        $_SESSION['auth']['pseudo'] = $item['modify-pseudo'];
-                    }
-                break;
-
-                case 'modify-mail':
-                    $response = $this->ModifyMail($user, $item);
-                    if($response){
-                        $_SESSION['auth']['mail'] = $item['modify-mail'];
-                    }
-                break;
-
-                case 'modify-mdp':
-                    $response = $this->ModifyPassword($user, $item);
-                    if($response){
-                        $_SESSION['auth']['mdp'] = $item['modify-mdp'];
-                    }
-                break;
-            }
-            return $response;
-        }
-    }
-
     private function ModifyPseudo(int $user, array $item): bool {
         $testPseudo = $this->TestPseudo($item['modify-pseudo']);
         $bdd = parent::Connection();
@@ -158,25 +177,6 @@ final class User extends ConnectDB {
         $req = $bdd->prepare('UPDATE users SET mdp = :mdp WHERE id = :id');
         $req->execute(array( 'mdp' => password_hash($item['modify-mdp'], PASSWORD_BCRYPT), 'id' => $user ));
         return true;
-    }
-
-    public function TestAdmin(int $user): bool {
-        $bdd = parent::Connection();
-        $req = $bdd->prepare('SELECT admin FROM users WHERE id = :id');
-        $req->execute(array('id' => $user));
-        $admin = $req->fetch();
-        if(!$admin){
-            print_r($admin);
-            return false;
-        }
-        else{
-            if($admin['admin'] == 1 ){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
     }
 
 }

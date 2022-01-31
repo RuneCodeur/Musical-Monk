@@ -4,8 +4,9 @@ $title = 'Musical-Monk';
 
 include_once("model/session.php");
 include_once("model/user.php");
-include_once("model/product.php");
 include_once("model/event.php");
+include_once("model/reservation-event.php");
+include_once("model/reservation-product.php");
 
 try{
     try{
@@ -22,23 +23,25 @@ try{
             }
         }
         elseif(isset($_GET['deleteevent'])){
-            $deleteEvent = new event();
-            $deleteEvent = $deleteEvent -> DeleteReservation($_GET['deleteevent'], $_SESSION['auth']['id']);
+            $deleteEvent = new ReservationEvent();
+            $deleteEvent = $deleteEvent -> DeleteMyEventReservation($_GET['deleteevent'], $_SESSION['auth']['id']);
         }
         elseif(isset($_GET['deleteproduct'])){
-            $deleteProduct = new Product();
-            $deleteProduct = $deleteProduct -> DeleteReservation($_GET['deleteproduct'], $_SESSION['auth']['id']);
+            $deleteProduct = new ReservationProduct();
+            $deleteProduct = $deleteProduct -> DeleteMyProductReservation($_GET['deleteproduct'], $_SESSION['auth']['id']);
         }
     }
     catch(Exception $e){
         echo '<div class="err"> erreur : ' . $e->getMessage() . '</div>';
     }
 
-    $product = new Product();
-    $event = new event();
-    $productReserved = $product -> ProductReserved($_SESSION['auth']['id']);
-    $eventReserved = $event -> EventReserved($_SESSION['auth']['id']);
-    $myEvents = $event -> MyEvents($_SESSION['auth']['id']);
+    $reservationProduct = new ReservationProduct();
+    $event = new Event();
+    $reservationEvent = new ReservationEvent();
+
+    $productReserved = $reservationProduct -> ListMyProductsReserved($_SESSION['auth']['id']);
+    $eventReserved = $reservationEvent -> ListMyEventsReserved($_SESSION['auth']['id']);
+    $myEvents = $event -> ListMyEvents($_SESSION['auth']['id']);
 
     //view
     include_once('view/user/account.php');

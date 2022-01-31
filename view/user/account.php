@@ -76,7 +76,7 @@
                             <a href="index.php?page=product&id=<?=$elem['product']?>" class="my-item">
                                 <div class="name"><?=$elem['name']?></div>
                                 <div class="quantity"> <?=$elem['quantity']?></div>
-                                <div class="price"> <?=$elem['price'] * $elem['quantity']?> €</div>
+                                <div class="price"> <?=number_format($elem['price'] * $elem['quantity'], 2, '.', ' ')?> €</div>
                             </a>
                             <a href="index.php?page=account&deleteproduct=<?=$elem['id']?>" class="delete">X</a>
                         </div>

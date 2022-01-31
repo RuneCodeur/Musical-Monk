@@ -2,6 +2,7 @@
 $title = 'Musical-Monk';
 
 include_once('model/event.php');
+include_once('model/reservation-event.php');
 include_once('model/calcul.php');
 
 try{
@@ -20,7 +21,7 @@ try{
             }else{
                 $friend = 0;
             }
-            $reservation = new Event();
+            $reservation = new ReservationEvent();
             $reservation = $reservation -> Reservation($_SESSION['auth']['id'], $_GET['id'], $friend);
             if($reservation === true){
                 echo '<div class="win"> Vous avez été correctement enregistré pour cet évènement! </div>';
@@ -32,9 +33,10 @@ try{
     }
 
     $event = new Event();
+    $reservation = new ReservationEvent();
 
     $infoEvent = $event -> OneEvent($_GET['id']);
-    $reservation = $event -> AllReserved($_GET['id']);
+    $listReservation = $reservation ->  ListAllUsersReservedEvent($_GET['id']);
     $date = Calcul::ExplodeDate($infoEvent['date']);
     $duration = Calcul::ExplodeDuration($infoEvent['duration']);
     
