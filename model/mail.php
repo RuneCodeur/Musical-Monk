@@ -18,7 +18,7 @@ final class SendMail implements SendMailInterface {
     }
 
     private function SendMailToAlert(string $message){
-        $MailAlert = 'rackhamledev@gmail.com';
+        $mailAlert = 'rackhamledev@gmail.com';
         $mail = $this->NewMail($mailAlert);
         $mail->Subject = "Musical Monk - Alerte Notification";
         
